@@ -11,7 +11,7 @@
 
     <title>
         
-          Hello World - haozidada
+          celery-learn - haozidada
         
     </title>
 
@@ -58,7 +58,17 @@ document.addEventListener('DOMContentLoaded', function () {
   </a>
 </div>
     <div class="book-menu">
-  
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h1 id="整理文档"><a href="#整理文档" class="headerlink" title="整理文档"></a>整理文档</h1><h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="celery-learn">celery学习</a></li>
+</ul>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+
 </div>
 
 
@@ -114,35 +124,21 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class="book-post">
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          
+<article id="page">
+  <h1>celery-learn</h1>
+  <h3 id="celery-使用"><a href="#celery-使用" class="headerlink" title="celery 使用"></a>celery 使用</h3><p>__kombu.binding.celery：_kombu.binding.celery是当前的工作队列</p>
+<p>_kombu.binding.celery.pidbox 和 _kombu.binding.celeryev:是celery内部用来发送event和管理其他队列的队列</p>
+<p>（一般不用管）</p>
+<h4 id="worker执行任务"><a href="#worker执行任务" class="headerlink" title="worker执行任务"></a>worker执行任务</h4><p>在项目目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -A参数指定创建的celery对象的位置，该app.celery_tasks.celery指的是app包下面的celery_tasks.py模块的celery实例，注意一定是初始化后的实例，后面加worker表示该实例就是任务执行者；</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -Q参数指的是该worker接收指定的队列的任务，这是为了当多个队列有不同的任务时可以独立；如果不设会接收所有的队列的任务；</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -l参数指定worker输出的日志级别；</span></span><br><span class="line">celery -A app.celery_tasks.celery worker -Q queue --loglevel=info</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+</article>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+<div id="paginator">
+  
 </div>
-
-
-  <div class="book-comments">
-    
-
-
-
-
-  </div>
-
-
-
-<script src="/js/book-post.js"></script>
 
         </div>
       </div>
@@ -167,7 +163,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div>2020-11-04</div>
+      <div>2020-11-05</div>
     </div>
   </div>
 

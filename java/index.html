@@ -11,7 +11,7 @@
 
     <title>
         
-          haozidada
+          java - haozidada
         
     </title>
 
@@ -124,42 +124,46 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class='book-archive'>
-  <!-- Title -->
-  
-    <h1>Archives</h1>
-  
-
-  
-    <!-- Split post by year -->
-    
-  
-
-  
-      <div class="years">
-          <h2>2020</h2>
-          <ul class="archive-list-item">
           
-              <li>
-                <span>2020-11-05</span>
-                <a href="/2020/11/05/home/">
-                  Untitled
-                </a>
-              </li>
-          
-              <li>
-                <span>2020-11-05</span>
-                <a href="/2020/11/05/menu/">
-                  Untitled
-                </a>
-              </li>
-          
-          </ul>
-      </div>
-  
+<article id="page">
+  <h1>java</h1>
+  <h3 id="java-源码阅读"><a href="#java-源码阅读" class="headerlink" title="java 源码阅读"></a>java 源码阅读</h3><h4 id="1-java源码阅读环境搭建"><a href="#1-java源码阅读环境搭建" class="headerlink" title="1. java源码阅读环境搭建"></a>1. java源码阅读环境搭建</h4><ol>
+<li><p>解压 C:\Program Files\Java\jdk1.8.0_131\src.zip , 重命名jdk_source</p>
+</li>
+<li><p>打开idea，选择Project -&gt; File -&gt; Project Structure -&gt; SDKs -&gt; Sourcepath,添加并选择刚才解压的目录 </p>
+</li>
+</ol>
+<p><img src="/java/media.assets/1600828735623.png" alt="1600828735623"></p>
+<p>3）编辑器左侧会出现java的源码包，选择要看的类的源码就能进去</p>
+<p><img src="/java/media.assets/1600829055222.png" alt="1600829055222"></p>
+<h4 id="1-2-IDEA-调试java-源码技巧"><a href="#1-2-IDEA-调试java-源码技巧" class="headerlink" title="1.2 IDEA 调试java 源码技巧"></a>1.2 IDEA 调试java 源码技巧</h4><ol>
+<li>查看接口实现类：Ctrl + Alt +B 选中按快捷键，然后跳到实现类地方去</li>
+<li>查看当前类继承树：Ctrl + H </li>
+</ol>
+<h4 id="2-源码部分"><a href="#2-源码部分" class="headerlink" title="2. 源码部分"></a>2. 源码部分</h4><h5 id="2-1-Object-类"><a href="#2-1-Object-类" class="headerlink" title="2.1 Object 类"></a>2.1 Object 类</h5><ol>
+<li>hashCode<ul>
+<li>public native int hashCode() Object 类下的native 方法，返回对象哈希值</li>
+<li>equals 比较两个对象相等，则一定有相同哈希值，equals比较二者不相等，则哈希码也可能相等，但是不等对象产生不同整型结果有助于提高哈希表性能</li>
+</ul>
+</li>
+<li>clone <ul>
+<li>protected native Object clone() throws CloneNotSupportedException 创建并返回对象的副本</li>
+<li>该方法是“浅拷贝”，该方法将创建该对象类的一个新实例，并使用该对象相应字段的内容初始化所有字段，就像赋值一样，这些字段的内容本身不是克隆的</li>
+<li>Object类本身没实现Cloneable 接口，如果一个类没有实现Cloneable接口，就会抛出CloneNotSupportedException异常，</li>
+</ul>
+</li>
+</ol>
+<h5 id="2-2-Serializable-接口"><a href="#2-2-Serializable-接口" class="headerlink" title="2.2 Serializable 接口"></a>2.2 Serializable 接口</h5><ul>
+<li>是一个接口，仅标识可序列化的语义</li>
+<li></li>
+</ul>
 
+</article>
+
+<div id="paginator">
   
 </div>
+
         </div>
       </div>
       <div class="column col-2 hide-lg">
@@ -183,7 +187,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div></div>
+      <div>2020-11-05</div>
     </div>
   </div>
 
