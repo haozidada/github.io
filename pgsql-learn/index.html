@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/celery-learn">celery学习</a></li>
+</ul>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+</ul>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h3 id="1-PGSQL-的安装"><a href="#1-PGSQL-的安装" class="headerlink" title="1. PGSQL 的安装"></a>1. PGSQL 的安装</h3><h4 id="1-1-安装说明"><a href="#1-1-安装说明" class="headerlink" title="1.1 安装说明"></a>1.1 安装说明</h4><ul>
+<li>安装方式：源码安装</li>
+<li>安装版本：v9.6.8</li>
+</ul>
+<h4 id="1-2-安装步骤"><a href="#1-2-安装步骤" class="headerlink" title="1.2 安装步骤"></a>1.2 安装步骤</h4><ol>
+<li>下载 postgresql-9.6.8.tar.gz 文件，并且上传到服务器/data/pg_sql/目录下</li>
+<li>在/data/pg_sql/下解压压缩包 tar -zxvf postgresql-9.6.8.tar.gz  (<a target="_blank" rel="noopener" href="https://ftp.postgresql.org/pub/source/v9.6.8/postgresql-9.6.8.tar.gz">https://ftp.postgresql.org/pub/source/v9.6.8/postgresql-9.6.8.tar.gz</a>)</li>
+<li>环境检查./configure –prefix=/data/pg_sql/pgsql968 –with-python<ul>
+<li>yum install readline-devel</li>
+<li>yum install zlib-devel</li>
+<li>yum install python-devel.x86_64</li>
+</ul>
+</li>
+<li>编译 make &amp;&amp;make install</li>
+</ol>
+<h4 id="1-3-系统用户创建以及授权"><a href="#1-3-系统用户创建以及授权" class="headerlink" title="1.3 系统用户创建以及授权"></a>1.3 系统用户创建以及授权</h4><ol>
+<li>添加系统用户并修改postgres密码   useradd postgres  &amp;&amp;  passwd postgres</li>
+<li>修改pg_sql 目录属主 chown -R postgres:postgres /data/pg_sql/</li>
+<li>切换到postgres用户下修改环境变量</li>
+</ol>
+<p>​     su - postgres   修改.bash_profile</p>
+<p><img src="/pgsql-learn/index.assets/1566637993874.png" alt="1566637993874"></p>
+<h4 id="1-4-初始化数据库以及启动"><a href="#1-4-初始化数据库以及启动" class="headerlink" title="1.4 初始化数据库以及启动"></a>1.4 初始化数据库以及启动</h4><ol>
+<li>执行initdb 初始化数据库</li>
+<li>启动数据库 pg_ctl start -l /data/pg_sql/log/pg_server.log</li>
+<li>然后可以使用psql 命令进行连接  </li>
+</ol>
+<h4 id="1-5-配置PGSQL可远程访问"><a href="#1-5-配置PGSQL可远程访问" class="headerlink" title="1.5 配置PGSQL可远程访问"></a>1.5 配置PGSQL可远程访问</h4><ul>
+<li><p>修改$PGHOME/data/postgresql.conf 文件 listen_addresses=‘localhost’ 改为 listen_addresses=’*’</p>
+<p><img src="/pgsql-learn/index.assets/1563452725016.png" alt="1563452725016"></p>
+</li>
+<li><p>修改$PGHOME/data/pg_hba.conf 文件 添加如下行：（pg_hba.conf用来设置访问认证的重要文件）</p>
+<p><img src="/pgsql-learn/index.assets/1563452853223.png" alt="1563452853223"></p>
+</li>
+</ul>
+<h4 id="1-6-PGSQL-调优"><a href="#1-6-PGSQL-调优" class="headerlink" title="1.6 PGSQL 调优"></a>1.6 PGSQL 调优</h4><ul>
+<li><p>修改$PGHOME/data/postgresql.conf 文件</p>
+<ul>
+<li>shared_buffers = 1024MB  共享内存 默认128M，调大到1024M</li>
+<li>work_mem = 4MB 默认4M  针对服务进程使用内部排序和hash在使用临时磁盘文件之前</li>
+<li>fsync = off 强制把数据同步回磁盘，默认为on，改为off,减小系统IO压力</li>
+<li>maintenance_work_mem 数据库维护操作使用内存空间的大小，VACCUM、CREATE INDEX、ALTER TABLE ADD FOREIGN KEY等操作</li>
+</ul>
+</li>
+<li><p>使用vacuum定期释放空间</p>
+<p>作用：</p>
+<ol>
+<li>释放更新/删除行磁盘空间，</li>
+<li>更新pgsql查询计划中的统计数据</li>
+<li>防止因事务ID重置而使用非常老的数据丢失</li>
+</ol>
+<p>命令：</p>
+<p>   vacummdb ：</p>
+<p>​            -a 所有数据库</p>
+<p>​            -d 指定清理数据库</p>
+<p>​            -f 执行full的vacumm</p>
+<p>​            -t 指定表清理</p>
+<p>​            -z 计算操作的统计信息</p>
+<p>​    </p>
+<p>​    示例如下：</p>
+<p>​    vacuumdb -d gims -f -z -v &gt;&gt; /tmp/vacuumdb.log</p>
+</li>
+</ul>
+<h4 id="1-7-PSQL常见问题"><a href="#1-7-PSQL常见问题" class="headerlink" title="1.7  PSQL常见问题"></a>1.7  PSQL常见问题</h4><p>启动时报不能加载共享文件libpq.so.5 执行如下命令</p>
+<p>error while loading shared libraries: libpq.so.5: cannot open shared object file: No such file or directory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s &#x2F;data&#x2F;soft&#x2F;pgsql968&#x2F;lib&#x2F;libpq.so.5 &#x2F;usr&#x2F;lib&#x2F;libpq.so.5</span><br><span class="line">ln -s &#x2F;data&#x2F;soft&#x2F;pgsql968&#x2F;lib&#x2F;libpq.so.5 &#x2F;usr&#x2F;lib64&#x2F;libpq.so.5</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-PGSQL使用"><a href="#2-PGSQL使用" class="headerlink" title="2. PGSQL使用"></a>2. PGSQL使用</h3><h4 id="2-1-pg-ctl-–-启动、停止、重启PGSQL"><a href="#2-1-pg-ctl-–-启动、停止、重启PGSQL" class="headerlink" title="2.1 pg_ctl – 启动、停止、重启PGSQL"></a>2.1 pg_ctl – 启动、停止、重启PGSQL</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 1. 数据库启动</span></span></span><br><span class="line">pg_ctl start -l logfile</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 2. 数据库停止</span></span></span><br><span class="line">pg_ctl stop</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 3. 数据库重启</span></span></span><br><span class="line">pg_ctl restart -l logfile</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## 4. 数据库运行状态显示</span></span></span><br><span class="line">pg_ctl status </span><br><span class="line"></span><br><span class="line">pg_ctl reload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-pgsql-创建数据库、用户、Schema"><a href="#2-2-pgsql-创建数据库、用户、Schema" class="headerlink" title="2.2 pgsql 创建数据库、用户、Schema"></a>2.2 pgsql 创建数据库、用户、Schema</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1、 创建数据库</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_xxx;</span><br><span class="line"><span class="comment">-- 创建用户指定密码</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> user_xxx <span class="keyword">WITH</span> login <span class="keyword">PASSWORD</span> <span class="string">&#x27;xxx&#x27;</span>; </span><br><span class="line"><span class="comment">-- 给用户授权数据库权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> <span class="keyword">DATABASE</span>  db_xxx <span class="keyword">TO</span> user_xxx;</span><br><span class="line"><span class="comment">-- 修改数据库属主</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> db_xxx OWNER <span class="keyword">to</span>  user_xxx</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建数据库指定属主 </span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_xxx <span class="keyword">WITH</span> OWNER  user_xxx <span class="keyword">ENCODING</span> <span class="string">&#x27;UTF8&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 2、创建Schema</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">SCHEMA</span> s_xx ；</span><br><span class="line"><span class="comment">-- 修改Schema属主</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">SCHEMA</span> s_xx OWNER <span class="keyword">TO</span> user_xx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 3、创建用户</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="keyword">WITH</span> <span class="keyword">PASSWORD</span> <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span>/<span class="keyword">ROLE</span> xxx [<span class="keyword">WITH</span>] <span class="keyword">option</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	SUPERUSER | NOSUPERUSER      :超级权限，拥有所有权限，默认nosuperuser。</span><br><span class="line">  | CREATEDB | NOCREATEDB        :建库权限，默认nocreatedb。</span><br><span class="line">  | CREATEROLE | NOCREATEROLE    :建角色权限，拥有创建、修改、删除角色，默认nocreaterole。</span><br><span class="line">  | INHERIT | NOINHERIT          :继承权限，可以把除superuser权限继承给其他用户/角色，默认inherit。</span><br><span class="line">  </span><br><span class="line">  | LOGIN | NOLOGIN              :登录权限,<span class="keyword">CREATE</span> <span class="keyword">ROLE</span> 默认NOLOGIN,<span class="keyword">CREATE</span> <span class="keyword">USER</span> 默认LOGIN</span><br><span class="line">  | <span class="keyword">REPLICATION</span> | NOREPLICATION  :复制权限，用于物理或则逻辑复制（复制和删除slots），默认是noreplication。</span><br><span class="line">  | BYPASSRLS | NOBYPASSRLS      :安全策略RLS权限，默认nobypassrls。</span><br><span class="line">  | <span class="keyword">CONNECTION</span> <span class="keyword">LIMIT</span> connlimit   :限制用户并发数，默认<span class="number">-1</span>，不限制。正常连接会受限制，后台连接和prepared事务不受限制。</span><br><span class="line">   [ ENCRYPTED ] <span class="keyword">PASSWORD</span> <span class="string">&#x27;password&#x27;</span> | <span class="keyword">PASSWORD</span> <span class="literal">NULL</span> :设置密码。加密方法由配置参数password_encryption确定，密码始终以加密方式存储在系统目录中。</span><br><span class="line">  |VALID <span class="keyword">UNTIL</span> <span class="string">&#x27;timestamp&#x27;</span>      :密码有效期时间，不设置则用不失效。</span><br><span class="line">  |<span class="keyword">IN</span> <span class="keyword">ROLE</span> role_name [, ...]    :新角色将立即添加为新成员。</span><br><span class="line">  | <span class="keyword">IN</span> <span class="keyword">GROUP</span> role_name [, ...]   :同上</span><br><span class="line">  | <span class="keyword">ROLE</span> role_name [, ...]       :<span class="keyword">ROLE</span>子句列出一个或多个现有角色，这些角色自动添加为新角色的成员。 （这实际上使新角色成为“组”）。</span><br><span class="line">  | <span class="keyword">ADMIN</span> role_name [, ...]      :与<span class="keyword">ROLE</span>类似，但命名角色将添加到新角色<span class="keyword">WITH</span> <span class="keyword">ADMIN</span> <span class="keyword">OPTION</span>，使他们有权将此角色的成员资格授予其他人。</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-3-pgsql-用户授权语句"><a href="#2-3-pgsql-用户授权语句" class="headerlink" title="2.3 pgsql 用户授权语句"></a>2.3 pgsql 用户授权语句</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  ######### DATABASE 授权 #########</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> <span class="keyword">DATABASE</span>  db_xx <span class="keyword">TO</span> user_xx;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CONNECT</span> <span class="keyword">ON</span> <span class="keyword">DATABASE</span> db_xx <span class="keyword">TO</span> user_xx;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- ######### Schema 授权 #########</span></span><br><span class="line"><span class="comment">-- 取消用户在public SCHEMA上的权限</span></span><br><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">CREATE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> <span class="keyword">public</span> <span class="keyword">FROM</span> <span class="keyword">PUBLIC</span>;</span><br><span class="line"><span class="comment">-- 授权public schema的查询权限给xxx_da</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> <span class="keyword">ALL</span> <span class="keyword">TABLES</span> <span class="keyword">IN</span> <span class="keyword">SCHEMA</span> <span class="keyword">public</span> <span class="keyword">TO</span> user_xx;</span><br><span class="line"><span class="comment">-- 授权某个用户SCHEMA的权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CREATE</span>,<span class="keyword">USAGE</span> <span class="keyword">ON</span> SCHEM <span class="keyword">public</span> <span class="keyword">TO</span> user_xx;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- ########  TABLE 授权 ########</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 单表授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> <span class="keyword">ON</span> schame_xx.w_xx <span class="keyword">TO</span> user_xx;</span><br><span class="line"><span class="comment">-- 授权用户表的某些权限</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">iNSERT</span>,<span class="keyword">UPDATE</span>,<span class="keyword">DELETE</span> <span class="keyword">ON</span> <span class="keyword">ALL</span> <span class="keyword">TABLES</span> <span class="keyword">IN</span> <span class="keyword">SCHEMA</span> s_xx <span class="keyword">TO</span> user_xx;</span><br><span class="line"><span class="comment">-- 列授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span> (<span class="keyword">name</span>,age) <span class="keyword">UPDATE</span> (<span class="keyword">name</span>,age) <span class="keyword">ON</span> schema_xx.w_xx <span class="keyword">TO</span> user_xx;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 批量生成授权语句</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;grant all on table &#x27;</span> || schemaname || <span class="string">&#x27;.&#x27;</span> || tablename || <span class="string">&#x27; to usertest;&#x27;</span> <span class="keyword">from</span> pg_tables</span><br><span class="line"><span class="keyword">where</span> schemaname = <span class="string">&#x27;panasonic_compass&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- ######## 序列授权 ########</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">UPDATE</span> <span class="keyword">ON</span> <span class="keyword">SEQUENCE</span> schema_xx.w_xx_id_seq <span class="keyword">TO</span> user_xx;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">UPDATE</span> <span class="keyword">ON</span> <span class="keyword">ALL</span> <span class="keyword">SEQUENCE</span> <span class="keyword">TO</span> user_xx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">INSERT</span>,<span class="keyword">UPDATE</span>,<span class="keyword">DELETE</span>,<span class="keyword">truncate</span> <span class="keyword">ON</span> <span class="keyword">TABLE</span> pp_spu_continuity <span class="keyword">TO</span> dapuprod_da;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span>：允许从指定表，视图或序列的任何列或列出的特定列进行<span class="keyword">SELECT</span>。也允许使用COPY <span class="keyword">TO</span>。在<span class="keyword">UPDATE</span>或<span class="keyword">DELETE</span>中引用现有列值也需要此权限。对于序列，此权限还允许使用currval函数。对于大对象，此权限允许读取对象。</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span>：允许将新行<span class="keyword">INSERT</span>到指定的表中。如果列出了特定列，则只能在<span class="keyword">INSERT</span>命令中为这些列分配（因此其他列将接收默认值）。也允许COPY <span class="keyword">FROM</span>。</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span>：允许更新指定表的任何列或列出的特定列，需要<span class="keyword">SELECT</span>权限。</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span>：允许删除指定表中的行，需要<span class="keyword">SELECT</span>权限。</span><br><span class="line"></span><br><span class="line"><span class="keyword">TRUNCATE</span>：允许在指定的表上创建触发器。</span><br><span class="line"></span><br><span class="line"><span class="keyword">REFERENCES</span>：允许创建引用指定表或表的指定列的外键约束。</span><br><span class="line"></span><br><span class="line"><span class="keyword">TRIGGER</span>：允许在指定的表上创建触发器。 </span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span>：对于数据库，允许在数据库中创建新的<span class="keyword">schema</span>、<span class="keyword">table</span>、<span class="keyword">index</span>。</span><br><span class="line"></span><br><span class="line"><span class="keyword">CONNECT</span>：允许用户连接到指定的数据库。在连接启动时检查此权限。</span><br><span class="line"></span><br><span class="line"><span class="keyword">TEMPORARY</span>、TEMP：允许在使用指定数据库时创建临时表。</span><br><span class="line"></span><br><span class="line"><span class="keyword">EXECUTE</span>：允许使用指定的函数或过程以及在函数。</span><br><span class="line"></span><br><span class="line"><span class="keyword">USAGE</span>：对于<span class="keyword">schema</span>，允许访问指定模式中包含的对象；对于<span class="keyword">sequence</span>，允许使用currval和<span class="keyword">nextval</span>函数。对于类型和域，允许在创建表，函数和其他模式对象时使用类型或域。</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALL</span> <span class="keyword">PRIVILEGES</span>：一次授予所有可用权限。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-设置搜索路径"><a href="#2-4-设置搜索路径" class="headerlink" title="2.4 设置搜索路径"></a>2.4 设置搜索路径</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看搜索路径</span></span><br><span class="line"><span class="keyword">SHOW</span> search_path;</span><br><span class="line"><span class="comment">-- 会话级别设置： </span></span><br><span class="line"><span class="keyword">SET</span> search_path <span class="keyword">TO</span> dapu_schema, <span class="keyword">public</span>;</span><br><span class="line"><span class="comment">-- 数据库级设置（跨会话）： </span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">database</span> db_xx <span class="keyword">SET</span> search_path <span class="keyword">TO</span> dapu_schema, <span class="keyword">public</span>;</span><br><span class="line"><span class="comment">--修改用户的搜索路径</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span>  xxx_da <span class="keyword">SET</span> search_path=da_schema,<span class="keyword">public</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-5-psql-命令行"><a href="#2-5-psql-命令行" class="headerlink" title="2.5 psql 命令行"></a>2.5 psql 命令行</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. psql连接pg_server</span></span><br><span class="line">psql -h 127.0.0.1 -p 5432 -d postgres  -U postgres</span><br><span class="line"></span><br><span class="line">psql -h 127.0.0.1 -p 5433 -d postgres  -U postgres</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 如果连本地pg_server  （可以不用用户名秘密码）</span></span><br><span class="line"> psql -d postgres  -U postgres  （psql postgres）</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. psql 常用命令</span></span><br><span class="line">  \q 退出命令</span><br><span class="line">  \l 查看数据库</span><br><span class="line">  \d 查看表</span><br><span class="line">  \d|\d+ tablename | t_pkey 显示表结构 </span><br><span class="line">  \dt 只显示表</span><br><span class="line">  \di 只显示索引</span><br><span class="line">  \ds 只显示序列</span><br><span class="line">  \dv 只显示视图</span><br><span class="line">  \df 只显示函数</span><br><span class="line">  \dn 显示所有schema</span><br><span class="line">  \db 显示所有表空间</span><br><span class="line">  \du \dg 列出所有角色和用户</span><br><span class="line">  \dp 或 \z 显示表的权限分配</span><br><span class="line">  \c datax 连接到datax</span><br><span class="line">  \encoding uft8 指定客户端的字符编码</span><br><span class="line">	</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 显示命令</span></span><br><span class="line">  \pset border 0 输出内容无边框</span><br><span class="line">  \pset border 1 表示边框只在内部</span><br><span class="line">  \pset border 2 表示内外都有边框</span><br><span class="line">  \x 每一行的每列数据都拆分成单行显示</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 执行sql我外部sql文件</span></span><br><span class="line">  \i filename.sql 执行外部文件sql 或 psql -s -f filename.sql</span><br><span class="line">	</span><br><span class="line">  \timing on 启用计时功能</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h4 id="2-6-postgres-常用语句"><a href="#2-6-postgres-常用语句" class="headerlink" title="2.6 postgres 常用语句"></a>2.6 postgres 常用语句</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- ######## 建表语句 ########</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> w_orders(</span><br><span class="line">		<span class="keyword">ID</span> <span class="built_in">NUMERIC</span>,</span><br><span class="line">		USER_ID <span class="built_in">NUMERIC</span>, </span><br><span class="line">		REAL_FEE <span class="built_in">NUMERIC</span>(<span class="number">10</span>,<span class="number">2</span>), </span><br><span class="line">		order_dt <span class="built_in">date</span>,	 </span><br><span class="line">		insert_dt <span class="built_in">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">		update_dt <span class="built_in">TIMESTAMP</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span></span><br><span class="line"> );</span><br><span class="line"></span><br><span class="line"><span class="comment">-- ######## 创建序列  ########</span></span><br><span class="line"><span class="comment">-- B-tree：最常用，适合等值和范围查询  Hash:    只能处理简单等值</span></span><br><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">UNIQUE</span>] <span class="keyword">INDEX</span>  INDEX_NAME [CONCURRENTLY] <span class="keyword">ON</span> w_orders <span class="keyword">USING</span> btree(valid_status)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- ########  psql 死锁语句 ########</span></span><br><span class="line"><span class="comment">-- 1）查询出长时间运行的sql</span></span><br><span class="line"><span class="keyword">SELECT</span> pid,usename,query_start,<span class="keyword">query</span> <span class="keyword">FROM</span> pg_stat_activity;</span><br><span class="line"><span class="comment">-- 2） 取消正在执行的sql,先标记，不会立即执行</span></span><br><span class="line"><span class="keyword">SELECT</span> pg_cancel_backend(pid);</span><br><span class="line"><span class="comment">-- 3） 终止后台服务进程，同时释放后台服务进程资源,上面的命令如果不能停止，尝试用这条</span></span><br><span class="line"><span class="keyword">SELECT</span> pg_terminate_backend(pid);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- #######  pg_tables #########</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询某个schema下所有表</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_tables <span class="keyword">where</span> schemaname = <span class="string">&#x27;dapu_test&#x27;</span>;</span><br><span class="line"><span class="comment">-- 查看表中索引</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_indexes <span class="keyword">where</span> tablename=<span class="string">&#x27;w_orders&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查看某个表的列名</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">col.table_schema,</span><br><span class="line">col.table_name,</span><br><span class="line">col.ordinal_position,</span><br><span class="line">col.column_name,</span><br><span class="line">col.data_type,</span><br><span class="line">col.character_maximum_length,</span><br><span class="line">col.numeric_precision,</span><br><span class="line">col.numeric_scale,</span><br><span class="line">col.is_nullable,</span><br><span class="line">col.column_default,</span><br><span class="line">des.description</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">information_schema.columns <span class="keyword">col</span> <span class="keyword">left</span> <span class="keyword">join</span> pg_description des <span class="keyword">on</span></span><br><span class="line">col.table_name::regclass = des.objoid</span><br><span class="line"><span class="keyword">and</span> col.ordinal_position = des.objsubid</span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">table_schema = <span class="string">&#x27;dapu_test&#x27;</span></span><br><span class="line"><span class="keyword">and</span> table_name = <span class="string">&#x27;w_orders&#x27;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">ordinal_position;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-pg-hba-conf-控制访问文件"><a href="#3-pg-hba-conf-控制访问文件" class="headerlink" title="3. pg_hba.conf 控制访问文件"></a>3. pg_hba.conf 控制访问文件</h3><h5 id="3-1-常用的配置"><a href="#3-1-常用的配置" class="headerlink" title="3.1 常用的配置"></a>3.1 常用的配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">TYPE  DATABASE    USER   ADDRESS   METHOD</span><br><span class="line">host    dapu    dapu_da    0.0.0.0/0     md5</span><br><span class="line">host    dapu    dapu_dev   127.0.0.1/32   md5</span><br><span class="line"></span><br><span class="line">TYPE: 		连接数据库的方式</span><br><span class="line">DATABASE:   匹配的数据库名称,all指定它匹配所有数据库。</span><br><span class="line">USER:       匹配的数据库用户名,值all指定它匹配所有用户，可以通过用逗号分隔来提供多个用户名。</span><br><span class="line">ADDRESS:    指定的IP地址，all以匹配任何IP地址。可以包含主机名，IP地址范围。如：172.20.143.89/32（表示一个主机）、172.20.143.0/24（小子网）、10.6.0.0/16（大子网）0.0.0.0/0代表所有IPv4地址	</span><br><span class="line">METHOD：   指定如何处理客户端的认证。常用的有ident，md5，password，trust，reject</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-2-生效方式"><a href="#3-2-生效方式" class="headerlink" title="3.2 生效方式"></a>3.2 生效方式</h5><p>1） 使用pg_ctl  reload重新读取pg_hba.conf文件，如果pg_ctl找不到数据库，则用-D /…/pgsql/data/指定数据库目录，</p>
+<p>2） 重启pgsql  service postgresql restart</p>
+<h4 id="4-PSQL-优化相关"><a href="#4-PSQL-优化相关" class="headerlink" title="4. PSQL 优化相关"></a>4. PSQL 优化相关</h4><h5 id="4-1-查看执行计划"><a href="#4-1-查看执行计划" class="headerlink" title="4.1 查看执行计划"></a>4.1 查看执行计划</h5><p>​    PGSQL使用EXPLAIN命令显示执行计划</p>
+<p>​    EXPLAIN [ANALYZE]  通过实际执行SQL来看执行计划</p>
+<p>​            [VERBOSE]  显示计划的附加信息, 默认FALSE</p>
+<p>​            [COSTS]    每个计划节点的启动成本和总成本</p>
+<pre><code>          [BUFFERS] 显示缓冲区使用的信息，和ALALYZE一起使用</code></pre>
+<p>​            [FORMAT]  格式化输出格式</p>
+<ul>
+<li>Seq Scan on w_orders： 顺序扫描，也就是全标扫描</li>
+<li>(cost=0.00..41511.60 rows=800675 width=24)  : 启动成本 0.00，返回数据总成本41511.60,rows=800675返回800675行，width=24表示每行平均宽度24个字节</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXPLAIN</span>   (<span class="keyword">ANALYZE</span> <span class="literal">TRUE</span>,<span class="keyword">FORMAT</span> <span class="keyword">JSON</span>)</span><br><span class="line"><span class="keyword">SELECT</span> user_id,<span class="keyword">id</span>,rn,(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> rn = <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;N&#x27;</span> <span class="keyword">END</span>) is_fp <span class="keyword">FROM</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> user_id,</span><br><span class="line">				 <span class="keyword">id</span>,</span><br><span class="line">				 ROW_NUMBER() <span class="keyword">OVER</span>(<span class="keyword">PARTITION</span> <span class="keyword">BY</span> user_id <span class="keyword">ORDER</span> <span class="keyword">BY</span> pay_dt <span class="keyword">ASC</span>) rn</span><br><span class="line">		<span class="keyword">FROM</span> w_orders t</span><br><span class="line">	 <span class="keyword">WHERE</span> t.valid_status = <span class="number">1</span></span><br><span class="line">)t</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-PSQL-主从配置"><a href="#5-PSQL-主从配置" class="headerlink" title="5. PSQL 主从配置"></a>5. PSQL 主从配置</h4><h5 id="5-1-创建用于主从同步的账号，并分配角色权限"><a href="#5-1-创建用于主从同步的账号，并分配角色权限" class="headerlink" title="5.1 创建用于主从同步的账号，并分配角色权限"></a>5.1 创建用于主从同步的账号，并分配角色权限</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> repuser <span class="keyword">with</span> login <span class="keyword">replication</span>  <span class="keyword">password</span> <span class="string">&#x27;123456&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过\du查看角色权限</p>
+<p><img src="/pgsql-learn/index.assets/1597305196327.png" alt="1597305196327"></p>
+<p>修改pg_hba.conf，增加repuser 的访问限制</p>
+<p>修改postgresql.conf，注意设置下下面几个地方：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">archive_mode</span> = <span class="string">on 			 #开启归档模式</span></span><br><span class="line"><span class="attr">wal_level</span> = <span class="string">hot_standby      #热备模式,流复制的时候使用到,在备用服务器上增加了运行只读查询所需的信息</span></span><br><span class="line"><span class="attr">max_wal_senders</span> = <span class="string">32         # 这个设置了可以最多有几个流复制连接，差不多有几个从，就设置几个</span></span><br><span class="line"><span class="attr">wal_keep_segments</span> = <span class="string">256      ＃ 设置流复制保留的最多的xlog数目</span></span><br><span class="line"><span class="attr">wal_sender_timeout</span> = <span class="string">60s     ＃ 设置流复制主机发送数据的超时时间</span></span><br><span class="line"><span class="attr">max_connections</span> = <span class="string">100        #  这个设置要注意下，从库的max_connections必须要大于主库的</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="5-2从库配置"><a href="#5-2从库配置" class="headerlink" title="5.2从库配置"></a>5.2从库配置</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 是从pgsql提供的一个方便基础备份的工具。经常用来搭建流复制环境 属于物理备份</span></span><br><span class="line">pg_basebackup -h 127.0.0.1 -D &quot;/data/pg122_5432/rep_data&quot;  -Fp -Xs -Pv -R -U repuser</span><br><span class="line">--password</span><br><span class="line">-h 指定连接的数据库的主机名或IP地址，这里就是主库的ip。</span><br><span class="line">-U 指定连接的用户名，专门负责流复制的repl用户。</span><br><span class="line">-F 指定了输出的格式，支持p（原样输出）或者t（tar格式输出）。</span><br><span class="line">-x 表示备份开始后，启动另一个流复制连接从主库接收WAL日志。</span><br><span class="line">-P 表示允许在备份过程中实时的打印备份的进度。</span><br><span class="line">-R 启用恢复配置的创建：创建一个standby.signal文件，并将连接设置附加到数据目录下的postgresql.auto.conf。</span><br><span class="line">-D 指定把备份写到哪个目录，这里尤其要注意一点就是做基础备份之前从库的数据目录（比如：/usr/local/postgresql/data）目录需要手动清空。</span><br><span class="line">-l 表示指定一个备份的标识</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-3-启动主库和从库"><a href="#5-3-启动主库和从库" class="headerlink" title="5.3 启动主库和从库"></a>5.3 启动主库和从库</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pg_ctl start -D &quot;/data/pg122_5432/data&quot;  -o  &quot;-p 5432&quot;</span><br><span class="line">pg_ctl stop -D &quot;/data/pg122_5432/rep_data&quot; </span><br><span class="line">pg_ctl stop -D &quot;/data/pg122_5432/data&quot; </span><br><span class="line">pg_ctl start -D &quot;/data/pg122_5432/rep_data&quot; -o &quot;-p 5433&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-4-主备切换"><a href="#5-4-主备切换" class="headerlink" title="5.4 主备切换"></a>5.4 主备切换</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 模拟主库故障</span></span><br><span class="line">pg_ctl stop -m fast</span><br><span class="line"><span class="meta">#</span><span class="bash"> 从库执行激活备库</span></span><br><span class="line">select pg_promote(true,60);</span><br><span class="line"><span class="meta">#</span><span class="bash">通过此命令判断主备</span></span><br><span class="line">pg_controldata -D /data/pg122_5432/rep_data/ |grep state</span><br><span class="line">in archive recovery ## 表示从库</span><br><span class="line">in production       ## 表示主库</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5-5-通过repmgr来管理主从"><a href="#5-5-通过repmgr来管理主从" class="headerlink" title="5.5 通过repmgr来管理主从"></a>5.5 通过repmgr来管理主从</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 注册主节点</span></span><br><span class="line">repmgr -f /data/repmgr510/repmgr.conf primary register</span><br><span class="line"></span><br><span class="line">node_id=1</span><br><span class="line">node_name=&#x27;node1&#x27;</span><br><span class="line">conninfo=&#x27;host=localhost user=repuser dbname=db_rep connect_timeout=2&#x27;</span><br><span class="line">data_directory=&#x27;/data/pg122_5432/data&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">repmgr -f /data/repmgr510/repmgr.conf cluster show</span><br><span class="line">repmgr -f /data/repmgr510/repmgr_slave.conf cluster show</span><br><span class="line"></span><br><span class="line">repmgr -f /data/repmgr510/repmgr_slave.conf standby register --force</span><br><span class="line"></span><br><span class="line">repmgr -f  /data/repmgr510/repmgr_slave.conf standby standby promote</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> -- 重启主备库使修改生效</span><br><span class="line"> repmgr node service --action=restart </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> repmgrd –f /etc/repmgr.conf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-11-06</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>

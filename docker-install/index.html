@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/celery-learn">celery学习</a></li>
+</ul>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><ul>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+</ul>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h3 id="docker-安装与使用"><a href="#docker-安装与使用" class="headerlink" title="docker 安装与使用"></a>docker 安装与使用</h3><h4 id="1-docker-安装与配置"><a href="#1-docker-安装与配置" class="headerlink" title="1.docker 安装与配置"></a>1.docker 安装与配置</h4><p>（1）win10 docker虚拟机 切换root用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<p>（2）windows 访问docker容器配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">cmd环境下执行如下命令，添加一条路由</span></span><br><span class="line">route add -p 172.17.0.0 mask 255.255.0.0 192.168.99.100</span><br></pre></td></tr></table></figure>
+
+<p>（3）docker 配置容器ssh 远程登录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.安装openssh 服务</span></span><br><span class="line">yum -y install openssh-server</span><br><span class="line">yum -y install openssh-clients</span><br><span class="line"><span class="meta">#</span><span class="bash">2. 生成密钥</span></span><br><span class="line">/usr/sbin/sshd-keygen -A</span><br><span class="line"><span class="meta">#</span><span class="bash">3. 启动ssh服务</span></span><br><span class="line">/usr/sbin/sshd</span><br><span class="line"><span class="meta">#</span><span class="bash">4.免密码本机跳本机</span></span><br><span class="line">ssh-keygen -t rsa -P &#x27;&#x27; -f ~/.ssh/id_rsa</span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line">chmod 0600 ~/.ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span><span class="bash">5. 允许root密码登录</span></span><br><span class="line">vim /etc/ssh/sshd_config #打开注释 PermitRootLogin yes, 允许密码登录,保存退出</span><br><span class="line"><span class="meta">#</span><span class="bash">6. 修改容器端口映射</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">7. 修改宿主主机端口方</span></span><br><span class="line">iptables -A INPUT -p tcp --dport 2222 -j ACCEPT   (貌似没用，最终还是用22短扣可以登录)</span><br><span class="line">iptables-save &gt; /etc/iptables.rules</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-docker-使用与常用命令"><a href="#2-docker-使用与常用命令" class="headerlink" title="2. docker 使用与常用命令"></a>2. docker 使用与常用命令</h4><p>（1）新建容器并运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">docker 创建一个新的容器并运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 以交互模式运行容器 -t 为容器分配一个伪输入终端</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 指定端口映射</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 9aec5c5fe4ba 为镜像id</span></span><br><span class="line">docker run -it  -p 5432:5432 -p 8090:8080  9aec5c5fe4ba   /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>（2）启动已终止的容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动一个已终止的容器 </span></span><br><span class="line">docker  start container_id</span><br></pre></td></tr></table></figure>
+
+<p>（3）容器与镜像的查看</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 列出正在运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出所有镜像</span></span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>（4）容器已启动，进入容器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -ti container_id /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>（5）删除容器或镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除容器</span></span><br><span class="line">docker rm container_id</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除镜像</span></span><br><span class="line">docker rmi image_id</span><br></pre></td></tr></table></figure>
+
+<p>（6）docker 从容器创建一个新的镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 从容器创建一个新的镜像</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a 镜像的作者</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -m 提交说明的文字 </span></span><br><span class="line">docker commit -a &quot;haozi&quot; -m &quot;configure pyenv and install python 2.7.3 python 3.7.3&quot; 3bc29b4d47af pyenv:v1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（7）容器和主机之间的数据拷贝</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> （Docker Quickstart Terminal到文件所在目录执行执行 78299019a3ff为容器id）</span></span><br><span class="line">docker cp stream2stream.json 78299019a3ff:/root/ </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>docker cp 78299019a3ff:/root/linkxDI.zip ./ </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#### 3 .docker 常见问题</span><br><span class="line"></span><br><span class="line">修改docker容器的端口号：</span><br><span class="line"></span><br><span class="line">​&#96;&#96;&#96;shell</span><br><span class="line"> sudo vi &#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;b6f79711f78*&#x2F;hostconfig.json</span><br><span class="line"> sudo vi &#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;b6f79711f78*&#x2F;config.v2.json</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>hostconfig.json 配置文件如下图：</p>
+<p><img src="/docker-install/index.assets/1566469534743.png" alt="1566469534743"></p>
+<p>config.v2.json 配置文件如下图：</p>
+<p><img src="/docker-install/index.assets/1566469602056.png" alt="1566469602056"></p>
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-11-06</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>
