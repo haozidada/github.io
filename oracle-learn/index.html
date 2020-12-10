@@ -11,7 +11,7 @@
 
     <title>
         
-          page - haozidada
+          haozidada
         
     </title>
 
@@ -150,23 +150,22 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class="book-post">
+          
+<article id="page">
+  <h1></h1>
+  <h2 id="Oracle使用笔记"><a href="#Oracle使用笔记" class="headerlink" title="Oracle使用笔记"></a>Oracle使用笔记</h2><h4 id="Oracle-启停流程"><a href="#Oracle-启停流程" class="headerlink" title="Oracle 启停流程"></a>Oracle 启停流程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## oracle 服务启动</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 打开监听 linux命令行</span></span><br><span class="line">lsnrctl start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 登录oracle</span></span><br><span class="line"><span class="meta">SQL&gt;</span><span class="bash"> sqlplus / as sysdba</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动Oracle oracle终端</span></span><br><span class="line"><span class="meta">SQL&gt;</span><span class="bash"> startup</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Oracle 服务停止</span></span><br><span class="line"><span class="meta">SQL&gt;</span><span class="bash"> shutdown immediate</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出Oracle 终端</span></span><br><span class="line"><span class="meta">SQL&gt;</span><span class="bash"> <span class="built_in">exit</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭监听</span></span><br><span class="line">lsnrctl stop</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Oracle-查看相关进程"><a href="#Oracle-查看相关进程" class="headerlink" title="Oracle 查看相关进程"></a>Oracle 查看相关进程</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看Oracle Net Listener进程</span></span><br><span class="line">ps -ef|grep tnslsnr</span><br><span class="line"><span class="meta">#</span><span class="bash"> Oracle background process</span></span><br><span class="line">ps -ef|grep -i &#x27;ora_&#x27; OR select * FROM v$session WHERE type =&#x27;BACKGROUND&#x27;;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Oracle Managerment Agent</span></span><br><span class="line">ps -ef|grep emagent</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Oracle-用户相关操作"><a href="#Oracle-用户相关操作" class="headerlink" title="Oracle 用户相关操作"></a>Oracle 用户相关操作</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> dapugrowth_dev <span class="keyword">identified</span> <span class="keyword">by</span> testdapudev <span class="keyword">default</span> <span class="keyword">tablespace</span> GIDW <span class="keyword">temporary</span> <span class="keyword">tablespace</span> GITEMP;</span><br></pre></td></tr></table></figure>
+
+
+</article>
+
+<div id="paginator">
   
   
 </div>
-
-
-  <div class="book-comments">
-    
-
-
-
-
-  </div>
-
-
-
-<script src="/js/book-post.js"></script>
 
         </div>
       </div>
@@ -191,7 +190,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div>2020-11-05</div>
+      <div>2020-12-10</div>
     </div>
   </div>
 

@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul>
 <h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
 <li><a href="/python-install">python安装</a></li>
-<li><a href="/celery-learn">celery学习</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
 <li><a href="/java">java源码阅读</a></li>
 </ul>
 <h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
@@ -77,10 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
 <li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
 <li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
 </ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
 <h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
 <li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
 <li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
 <li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
 </ul>
 <ul>
 <li><a href="/github-pages">Github Pages教程</a></li>
@@ -144,7 +153,7 @@ function sidebar_toggle() {
           
 <article id="page">
   <h1></h1>
-  <h3 id="celery使用"><a href="#celery使用" class="headerlink" title="celery使用"></a>celery使用</h3><hr>
+  <h3 id="celery使用笔记"><a href="#celery使用笔记" class="headerlink" title="celery使用笔记"></a>celery使用笔记</h3><hr>
 <p>celery 是python里的一款分布式框架，可以执行异步任务，也支持定时任务的调度</p>
 <h4 id="celery-实现机制"><a href="#celery-实现机制" class="headerlink" title="celery 实现机制"></a>celery 实现机制</h4><p>由producer(程序操控者)或定时任务管理器celery beat发送任务消息到消息中间件broker,然后由broker作为中间人下发任务到woker端，被下发任务的woker来去执行具体的task,在执行task任务结束以后，将任务的执行结果存储在result backend</p>
 <h4 id="celery组件"><a href="#celery组件" class="headerlink" title="celery组件"></a>celery组件</h4><p>celery主要由消息中间件（broker）,任务执行单元（worker）和任务执行结果（backend）组成</p>

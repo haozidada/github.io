@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
+<li><a href="/kettle-csv">kettle 定时同步csv到数据库表</a></li>
+<li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
+<li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
+</ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
+<h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h3 id="linux-下redis的安装与使用"><a href="#linux-下redis的安装与使用" class="headerlink" title="linux 下redis的安装与使用"></a>linux 下redis的安装与使用</h3><h4 id="1-redis-安装"><a href="#1-redis-安装" class="headerlink" title="1. redis 安装"></a>1. redis 安装</h4><ol>
+<li><p>下载redis并解压</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载redis源码包</span></span><br><span class="line">wget http://download.redis.io/releases/redis-5.0.5.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压包</span></span><br><span class="line">tar -zxvf redis-5.0.5.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入到解压的redis根目录执行make命令编译</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压目录下执行</span></span><br><span class="line">make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将redis 安装到指定目录</span></span><br><span class="line">cd src</span><br><span class="line">make install  PREFIX=/data/soft/redis </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制redis 的配置文件 到安装目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp &#x2F;data&#x2F;download&#x2F;redis-5.0.5&#x2F;redis.conf &#x2F;data&#x2F;soft&#x2F;redis&#x2F;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改redis.conf</p>
+<p>1）修改daemonize yes 后台运行<img src="/redis-learn/index.assets/1566445422091.png" alt="1566445422091"></p>
+<p>2）配置redis 远程访问 </p>
+<ul>
+<li>protected-mode no 配置可远程访问</li>
+</ul>
+<p><img src="/redis-learn/index.assets/1566459296553.png" alt="1566459296553"></p>
+<ul>
+<li>requirepass  xxxx 配置远程访问密码<img src="/redis-learn/index.assets/1566459626266.png" alt="1566459626266"></li>
+</ul>
+</li>
+</ol>
+<h4 id="2-redis使用以及常用命令"><a href="#2-redis使用以及常用命令" class="headerlink" title="2. redis使用以及常用命令"></a>2. redis使用以及常用命令</h4><ol>
+<li><p>启动redis,并且指定配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/redis-server redis.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过redis-cli连接redis</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启用redis 客户端</span></span><br><span class="line">./bin/redis-cli</span><br><span class="line"><span class="meta">#</span><span class="bash"> 授权</span></span><br><span class="line">auth foobared</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换数据库</span></span><br><span class="line">select 1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 退出客户端</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>redis服务停止</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1. 客户端通过shutwon命令 停止redis</span></span><br><span class="line">./bin/redis-cli shutdown</span><br><span class="line">./redis-cli -h 127.0.0.1 -p 6379 shutdown</span><br><span class="line"><span class="meta">#</span><span class="bash">2. 通过杀死redis进程强制停止,可能导致持久化数据丢失</span></span><br><span class="line">ps -ef|gerp redis </span><br><span class="line">kill -9 pid</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>redis 命令总结</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">set</span> 数据类型常用命令</span></span><br><span class="line">sadd book mathbook   #往set添加元素 book 为set集合，mathbook为set元素</span><br><span class="line">smembers book		 #查看set元素</span><br><span class="line"></span><br><span class="line">sadd(key, member)：向名称为key的set中添加元素member</span><br><span class="line">srem(key, member) ：删除名称为key的set中的元素member</span><br><span class="line">spop(key) ：随机返回并删除名称为key的set中一个元素</span><br><span class="line">smove(srckey, dstkey, member) ：移到集合元素</span><br><span class="line">scard(key) ：返回名称为key的set的基数</span><br><span class="line">sismember(key, member) ：member是否是名称为key的set的元素</span><br><span class="line">sinter(key1, key2,…key N) ：求交集</span><br><span class="line">sinterstore(dstkey, (keys)) ：求交集并将交集保存到dstkey的集合</span><br><span class="line">sunion(key1, (keys)) ：求并集</span><br><span class="line">sunionstore(dstkey, (keys)) ：求并集并将并集保存到dstkey的集合</span><br><span class="line">sdiff(key1, (keys)) ：求差集</span><br><span class="line">sdiffstore(dstkey, (keys)) ：求差集并将差集保存到dstkey的集合</span><br><span class="line">smembers(key) ：返回名称为key的set的所有元素</span><br><span class="line">srandmember(key) ：随机返回名称为key的set的一个元素</span><br><span class="line"></span><br><span class="line">https://www.cnblogs.com/silent2012/p/5368925.html</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-redis-bin下可执行文件"><a href="#3-redis-bin下可执行文件" class="headerlink" title="3. redis bin下可执行文件"></a>3. redis bin下可执行文件</h4><p>安装完成后redis下只有一个bin目录，其目录下执行文件如下图：</p>
+<p><img src="/redis-learn/index.assets/1566444783400.png" alt="1566444783400"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reids-benchmark    ---性能测试工具</span><br><span class="line">redis-check-aof	   ---AOF文件修复工具</span><br><span class="line">redis-check-dump   ---RDB文件检查工具（快照持久化工具）</span><br><span class="line">redis-cli		   ---命令行客户端</span><br><span class="line">redis-server       ---reids服务器启动命令</span><br></pre></td></tr></table></figure>
+
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-12-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>

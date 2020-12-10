@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
+<li><a href="/kettle-csv">kettle 定时同步csv到数据库表</a></li>
+<li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
+<li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
+</ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
+<h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h2 id="集群运维"><a href="#集群运维" class="headerlink" title="集群运维"></a>集群运维</h2><h4 id="HDFS-基本架构"><a href="#HDFS-基本架构" class="headerlink" title="HDFS 基本架构"></a>HDFS 基本架构</h4><p>HDFS 主要由三部分组成，NameNode、DataNode、SecondaryNameNode 如果是HA架构，还有StandbyNameNode和JournalNode</p>
+<ul>
+<li>NameNode: 存储元数据，数据块存储位置、文件权限、文件大小等，首先保存在内存中，定时持久化到磁盘，启动时，元数据从磁盘加载到内存，后续都是在内存中进行读写</li>
+<li>DataNode: 数据节点，HDFS中的文件以块的形式保存在DataNode所在磁盘，同时DataNode也维护了block id到DataNode本地文件的映射关系</li>
+<li>SecnodaryNameNode: NameNode的备份节点，定时异地冷备份NameNode元数据，可能会丢数据，可选服务，通过StandbyNameNode构建HA的话，可以不用SecnodaryNameNode</li>
+<li>StandbyNameNode: NameNode的备用节点，此节点处于Standby状态，不接受用户请求，但是会通过JournalNode时刻同步NameNode元数据信息，当NameNode(处于Active) 发生故障后，Zookeeper会及时发现问题，进而主备切换。完全意义上热备份，可以做到数据零丢失</li>
+<li>JournalNode: 主备NameNode和StandbyNameNode元数据实时同步</li>
+</ul>
+<h5 id="NameNode"><a href="#NameNode" class="headerlink" title="NameNode"></a>NameNode</h5><ul>
+<li>FsImage 文件用来记录数据块到文件的映射、目录、或文件的结构、属性等信息、里面记录了最后一次检查点之前HDFS文件系统中所有目录和文件信息</li>
+<li>Edit Log 文件记录了对文件创建、删除、重命名等操作日志，也是最后一次检查点之后所有对HDFS文件系统的操作都会记录在Edit Log文件中</li>
+</ul>
+<p>checkpoint的过程需要消耗大量IO和CPU资源，并阻塞HDFS读写，一般发生在SecondaryNameNode 或HA模式下 Standby状态的NameNode实现</p>
+<h5 id="SecondaryNameNode"><a href="#SecondaryNameNode" class="headerlink" title="SecondaryNameNode"></a>SecondaryNameNode</h5><p>主要实现NameNode元数据备份以及将Edit Log合并到Fsimage中</p>
+<p>​    1) 定期和NameNode通信，请求其停止使用Edit Log，暂时将新的写操作转到一个新文件edit.new上来，瞬间完成</p>
+<p>​    2）通过Http Get方式从NameNode上获取FsImage和Edit Log,并下载到本地目录</p>
+<p>​    3）将下载下来的FsImage和Edit Log加载到内存中，该过程就是FsImage和EditLog的合并，合并后产生一个新的FsImage文件，这个过程就是checkpoint;</p>
+<p>​    4) 合并成功后，会通过post方式将新的FsImage文件发送到NameNode</p>
+<p>​    5）NameNode 会将接收到的FsImage替换调旧的，同时用edit.new替换掉Edit Log,这样Edit Log就会变小</p>
+<h4 id="Yarn整体架构"><a href="#Yarn整体架构" class="headerlink" title="Yarn整体架构"></a>Yarn整体架构</h4><p>yarn资源管理器，架构设计基于主从架构（Master-Slave）模式，主要由ResourceManager(RM)和NodeManager(NM) 两大部分组成。此外还有ApplicationMaster(AM)、ApplicationManager、Scheduler以及Container等组件</p>
+<ul>
+<li>RM:由ApplicationManager和Scheduler组成<ul>
+<li>Scheduler：集群资源调度器，有Capacity Scheduler和Fair Scheduler两种</li>
+<li>ApplicationManager:负责整个集群所有应用程序</li>
+</ul>
+</li>
+<li>AM: 负责任务执行的始末，全程保障任务执行效果<ul>
+<li>AM切分数据，对人物进行分片；</li>
+<li>AM向RM申请资源，然后把申请后的资源交给NodeManager</li>
+<li>监控任务进行，并对错误任务重启</li>
+<li>通过NodeManager 监视任务执行和资源的使用情况</li>
+</ul>
+</li>
+<li>NM: 每个计算节点都运行一个NodeManager服务</li>
+<li>Container 是Yarn资源管理器中最底层的计算单元</li>
+</ul>
+<h4 id="双NameNode实现原理与应用架构"><a href="#双NameNode实现原理与应用架构" class="headerlink" title="双NameNode实现原理与应用架构"></a>双NameNode实现原理与应用架构</h4><h5 id="双NameNode-运行原理"><a href="#双NameNode-运行原理" class="headerlink" title="双NameNode 运行原理"></a>双NameNode 运行原理</h5><p>双NameNode，就是一个NameNode处于Active（活跃）状态，另一个NameNode处于Standby(备用)状态，通过这种机制，实现NameNode双机器热备高可用状态。Standby的NameNode处于随时待命状态，它时刻同步Active状态的NameNode元数据，一旦Active状态的NameNode不工作，可以通过手工或自动的方式将Standby状态的NameNode转变为Active。</p>
+<h4 id="主备自动切换原理"><a href="#主备自动切换原理" class="headerlink" title="主备自动切换原理"></a>主备自动切换原理</h4><p>为保证自动切换，NameNode使用ZooKeeper集群进行仲裁选举。集群中两个NameNode都在Zookeeper中注册，当Active状态的NameNode出故障时，Zookeeper能马上检测到这种情况，它会子自动把Standby状态切换为Active状态。</p>
+<p>每个NameNode都会在Zk中注册并且初始化一个session标识，一旦NameNode失效了，session也将过期，ZK提供了一个简单的机制保证只有一个NameNode是活动的，那就是独占锁，如果当前活动NameNode失效了，那么另外一个NameNode将获取Z的独占锁，表明自己是活跃节点</p>
+<h4 id="ZKFailoverController"><a href="#ZKFailoverController" class="headerlink" title="ZKFailoverController"></a>ZKFailoverController</h4><p>(ZKFC) 是ZK集群客户端，用来监控NN的状态信息，每个运行的NameNode节点必须运行一个ZKFC，提供以下功能：</p>
+<ul>
+<li>健康检查：ZKFC定期对本地NN发送health-check命令，如果NN正确返回，那么NN被认为是OK的，否则被人为是失效节点；</li>
+<li>session管理：当本地NN是健康的时候，ZKFC将会在ZK中持有一个session,如果本地NN正好是Active,那么ZKFC将持有一个短暂的节点作为锁，一旦本地NN失效了，那么这个节点就会被自动 删除</li>
+<li>基础选举：如果本地NN是健康的，并且ZKFC发现没有其他NN持有这个独占锁，那么它将试图获取该锁，一旦成功，那么它开始执行failvoer，然后变成Active</li>
+</ul>
+<h4 id="JournalNode"><a href="#JournalNode" class="headerlink" title="JournalNode"></a>JournalNode</h4><p>集群中进行元数据共享</p>
+<h5 id="双NameNode集群环境规划"><a href="#双NameNode集群环境规划" class="headerlink" title="双NameNode集群环境规划"></a>双NameNode集群环境规划</h5><ul>
+<li><p>NameNode 服务，单独部署，两个NameNode需要两台服务器</p>
+</li>
+<li><p>DataNode和NodeManager服务，建议部署在同一台</p>
+</li>
+<li><p>NameNode和ResourceManager，</p>
+</li>
+<li><p>Zookeeper 和JournalNode服务是基于集群架构的，因此至少需要3个集群节点，Zookeeper和JournalNode集群可以放一起，共享3台服务器资源</p>
+</li>
+</ul>
+<p><img src="/cluster-learn/index.assets/1606117789586.png" alt="1606117789586"></p>
+<h4 id="Hadoop集群配置文件"><a href="#Hadoop集群配置文件" class="headerlink" title="Hadoop集群配置文件"></a>Hadoop集群配置文件</h4><p>配置原则：重写配置、默认覆盖，否则默认生效。hadoop大部分配置参数都有默认值，如果配置文件设置了参数值，那么默认值失效，否则生效</p>
+<p>hadoop需要进行配置的文件一共有5个，即core-site.xml、hdfs-site.xml、mapred-site.xml、yarn-site.xml和hosts，运维的习惯性 做法是，将配置文件在NameNode节点全部配置完成后，直接复制到集群其他所有的节点</p>
+<ul>
+<li>core-site.xml：NameNode核心配置文件，主要对NameNode属性配置</li>
+<li>hdfs-site.xml:  hdfs的核心配置文件，主要配置NameNode、DataNode的一些基于HDFS的属性信息，在NameNode和DataNode节点生效</li>
+<li>mapred-site.xml：针对MR的配置文件</li>
+<li>yarn-site.xml: Yarn资源管理框架的核心配置文件</li>
+<li>hosts文件: /etc/hadoop/conf下创建hosts文件，指定hadoop集群datanode节点</li>
+</ul>
+<h4 id="启动和维护高可用NameNode-Yarn-分布式集群"><a href="#启动和维护高可用NameNode-Yarn-分布式集群" class="headerlink" title="启动和维护高可用NameNode + Yarn 分布式集群"></a>启动和维护高可用NameNode + Yarn 分布式集群</h4><h5 id="1、启动和格式化Zookeeper集群"><a href="#1、启动和格式化Zookeeper集群" class="headerlink" title="1、启动和格式化Zookeeper集群"></a>1、启动和格式化Zookeeper集群</h5><p>Zookeeper集群所有的节点配置完成后，就可以启动Zookeeper服务了，在slave001、slave002、slave003三个节点依次执行如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1. <span class="built_in">cd</span> zookeeper目录执行如下命令，启动zookeeper</span></span><br><span class="line">./zkServer.sh start</span><br><span class="line"><span class="meta">#</span><span class="bash">2. 可以看到 QuorumPeerMain，这是zk启动进程</span></span><br><span class="line">jps</span><br><span class="line"><span class="meta">#</span><span class="bash">3. 在zk集群建立HA相应的节点信息，在namenodemaster节点下执行：</span></span><br><span class="line">hdfs zkfc -formatZK</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、启动JournalNode集群"><a href="#2、启动JournalNode集群" class="headerlink" title="2、启动JournalNode集群"></a>2、启动JournalNode集群</h5><p>JournalNode 集群安装在slave001、slave002、slave003三个节点，因此要启动JournalNode集群，需要分别在三个节点执行如下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 启动后，会在本地磁盘产生一个目录/data1/hadoop/dfs/jn，此目录在配置文件定义过，用于保存NameNode的edits文件目录</span></span><br><span class="line">hdfs --daemon start journalnode</span><br><span class="line">jps</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、格式化启动主节点NameNode服务"><a href="#3、格式化启动主节点NameNode服务" class="headerlink" title="3、格式化启动主节点NameNode服务"></a>3、格式化启动主节点NameNode服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 会在 dfs.NameNode.name.dir 中产生一个目录，用于保存NameNode的fsimage、edits等文件</span></span><br><span class="line">hdfs namenode --format -clusterId node01</span><br><span class="line"><span class="meta">#</span><span class="bash"> 格式化完成后，可以在namenodemaster上启动namenode服务</span></span><br><span class="line">hdfs --daemon start namenode</span><br><span class="line"><span class="meta">#</span><span class="bash"> 会产生一个新的java进程NameNode</span></span><br><span class="line">jps</span><br></pre></td></tr></table></figure>
+
+<h5 id="4、NameNode-主、备节点同步元数据"><a href="#4、NameNode-主、备节点同步元数据" class="headerlink" title="4、NameNode 主、备节点同步元数据"></a>4、NameNode 主、备节点同步元数据</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 元数据同步到备用节点，在备用NN启动之前</span></span><br><span class="line">hdfs namenode -bootstrapStandby</span><br></pre></td></tr></table></figure>
+
+<h5 id="5、启动备用NameNode服务"><a href="#5、启动备用NameNode服务" class="headerlink" title="5、启动备用NameNode服务"></a>5、启动备用NameNode服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdfs --daemon start namenode </span><br><span class="line">jps</span><br></pre></td></tr></table></figure>
+
+<h5 id="6、启动Zookeeper-FailoverController-zkfc服务"><a href="#6、启动Zookeeper-FailoverController-zkfc服务" class="headerlink" title="6、启动Zookeeper FailoverController zkfc服务"></a>6、启动Zookeeper FailoverController zkfc服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs --daemon start zkfc</span><br></pre></td></tr></table></figure>
+
+<h5 id="7、启动存储节点DataNode服务"><a href="#7、启动存储节点DataNode服务" class="headerlink" title="7、启动存储节点DataNode服务"></a>7、启动存储节点DataNode服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs --daemon start datanode </span><br></pre></td></tr></table></figure>
+
+<h5 id="8、启动ResourceManager、NodeManager、以及historyserver服务"><a href="#8、启动ResourceManager、NodeManager、以及historyserver服务" class="headerlink" title="8、启动ResourceManager、NodeManager、以及historyserver服务"></a>8、启动ResourceManager、NodeManager、以及historyserver服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn --daemon start resourcemanager</span><br></pre></td></tr></table></figure>
+
+<h4 id="大数据运维工具-Ambari"><a href="#大数据运维工具-Ambari" class="headerlink" title="大数据运维工具 Ambari"></a>大数据运维工具 Ambari</h4><p>hadoop 自动化部署管理，比较有名的有Apache Ambari、以及Cloudera Manager(CM)等。</p>
+<p>Ambari是一个分布式架构应用工具，由3部分组成，即Ambari Server、Ambari Agent、Ambari Web和Metrics Collector,原理是Ambari Server 通知 Ambari Agent安装指定软件，Ambari Agent定时发送各个机器每个软件模块的运行状态给Ambari Server; 同时Metrics Collector用来提供监控信息查询接口，供Ambari Server进行查询</p>
+<h4 id="集群调优"><a href="#集群调优" class="headerlink" title="集群调优"></a>集群调优</h4><h5 id="Yarn-的内存和cpu调优"><a href="#Yarn-的内存和cpu调优" class="headerlink" title="Yarn 的内存和cpu调优"></a>Yarn 的内存和cpu调优</h5><p>Yarn集群同时支持内存和CPU两种资源调度，因此对Yarn集群调优也分为Yarn的内存参数和CPU参数调优两部分，Yarn主要管理的资源是Container,Yarn资源分配的基本单位。Yarn集群中平衡内存、CPU、磁盘三者的资源分配很重要，最基本经验：每两个Container使用一块磁盘、一个CPU核，这种配置，可以使集群资源得到一个比较好的平衡利用</p>
+<p>进程堆内存优化：</p>
+<ul>
+<li>ResourceManager堆内存参数： yarn-env.sh中设置ResourceManager堆内存大小，建议设置8G以上：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export YARN_RESOURCEMANAGER_HEAPSIZE=8192 </span><br><span class="line">export YARN_RESOURCEMANAGER_OPTS=&quot;-server -Xms$&#123;YARN_RESOURCEMANAGER_HEAPSIZE&#125;m -Xmx$&#123;YARN_RESOURCEMANAGER_HEAPSIZE&#125;m&quot; </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>NodeManager堆内存参数建议大小设置4G以上：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export YARN_NODEMANAGER_HEAPSIZE=4096 </span><br><span class="line">export YARN_NODEMANAGER_OPTS=&quot;-Xms$&#123;YARN_NODEMANAGER_HEAPSIZE&#125;m -Xmx$&#123;YARN_NODEMANAGER_HEAPSIZE&#125;m&quot; </span><br></pre></td></tr></table></figure>
+
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-12-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
+<li><a href="/kettle-csv">kettle 定时同步csv到数据库表</a></li>
+<li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
+<li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
+</ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
+<h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h2 id="Kafka-安装和使用"><a href="#Kafka-安装和使用" class="headerlink" title="Kafka 安装和使用"></a>Kafka 安装和使用</h2><h5 id="1-单机版安装和启动"><a href="#1-单机版安装和启动" class="headerlink" title="1. 单机版安装和启动"></a>1. 单机版安装和启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.下载访问http://kafka.apache.org/downloads进行下载</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 解压 </span></span><br><span class="line">tar -zxvf  kafka_2.11-2.1.0.tgz</span><br><span class="line">cd kafka_2.11-2.1.0</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 启动Zookeeper和 Kafka Server</span></span><br><span class="line">nohup bin/zookeeper-server-start.sh config/zookeeper.properties &gt; zk.log 2&gt;&amp;1 &amp;</span><br><span class="line">nohup bin/kafka-server-start.sh config/server.properties &gt; kafka.log 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">4.kafka-console-consumer.sh 启动</span></span><br><span class="line">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic filebeat_log --from-beginning</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="kafka-查看所有topic"><a href="#kafka-查看所有topic" class="headerlink" title="kafka 查看所有topic"></a>kafka 查看所有topic</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看所有topic列表</span></span><br><span class="line">bin/kafka-topics.sh --zookeeper 192.168.21.101:2181 --list</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建topic</span></span><br><span class="line">bin/kafka-topics.sh --create --zookeeper 192.168.21.101:2181 --partitions 1 --replication-factor 1 --topic  kafkatest</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看topic</span></span><br><span class="line">bin/kafka-topics.sh --describe --zookeeper  192.168.21.101:2181 --topic kafkatest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="Kafka-Eagle-实现对Kafka消息队列监控"><a href="#Kafka-Eagle-实现对Kafka消息队列监控" class="headerlink" title="Kafka Eagle 实现对Kafka消息队列监控"></a>Kafka Eagle 实现对Kafka消息队列监控</h5><p>Kafka Eagle 是一款用来管理Kafka集群的可视化工具，它可以支持管理多个Kafka集群，还可以管理Kafka的Topic，也可以对消费者进行监控，并可以实现消息阻塞告警、集群健康状态检测等功能。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压</span></span><br><span class="line">tar zxvf kafka-eagle-bin-2.0.0.tar.gz</span><br><span class="line">cd kafka-eagle-bin-2.0.0</span><br><span class="line">tar zxvf kafka-eagle-web-2.0.0-bin.tar.gz -C /usr/local</span><br><span class="line">mv /usr/local/kafka-eagle-web-2.0.0  /usr/local/kafka-eagle</span><br><span class="line">chown -R kafka:kafka /usr/local/kafka-eagle</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="kafka-是否会丢消息，如何处理"><a href="#kafka-是否会丢消息，如何处理" class="headerlink" title="kafka 是否会丢消息，如何处理"></a>kafka 是否会丢消息，如何处理</h5><p>kafka丢消息的几种情况：</p>
+<ol>
+<li><p>producer 把消息发送给broker，因网络抖动，消息没有到达broker,且开发人员无感知</p>
+<p>解决方案：producer设置acks参数，消息同步到master之后返回ack信号，否则抛异常使应用程序感知到并在业务中进行重试发送。这种方式一定程度保证了消息的可靠性，producer等待broker确认信号时延也不高</p>
+</li>
+<li><p>producer把消息发送给broker-master,master收到消息后，在未将消息同步给follower之前，挂掉了，且开发人员无感知</p>
+<p>解决方案：producer设置acks参数，消息同步到master且同步到所有follower之后返回ack信号，否则抛异常使应用程序感知并在业务中进行重试发送，这样设置在更大程度上保证了消息的可靠性，缺点是producer等待broker确认信号时延比较高</p>
+</li>
+<li><p>producer把消息发送给broker-master、master接收到消息之后，master未成功将消息同步给每个follower,有消息丢失风险</p>
+</li>
+<li><p>某个broker消息尚未从内存缓冲区持久化到磁盘，就挂了，这种情况无法确认ack机制感知</p>
+<p>解决方案：设置参数，加快消息持久化频率，能在一定程度上减少这种情况发生的概率。但提高频率自然也会影响性能</p>
+</li>
+<li><p>consumer成功拉取了消息，consumer挂了</p>
+<p>解决方案：设置手动sync,消费成功才提交</p>
+</li>
+</ol>
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-12-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>

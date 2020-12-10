@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
+<li><a href="/kettle-csv">kettle 定时同步csv到数据库表</a></li>
+<li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
+<li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
+</ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
+<h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h2 id="ELK-日志采集"><a href="#ELK-日志采集" class="headerlink" title="ELK 日志采集"></a>ELK 日志采集</h2><h4 id="Filebeat"><a href="#Filebeat" class="headerlink" title="Filebeat"></a>Filebeat</h4><p>filebeat是一个轻量级的日志监测、传输工具，它最大的特点是性能稳定、配置简单、占用系统资源很少</p>
+<p>主要由两个组件：Prospector(探测器)和Harvester(收集器)</p>
+<h5 id="filebeat-安装"><a href="#filebeat-安装" class="headerlink" title="filebeat 安装"></a>filebeat 安装</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 解压并重命名</span></span><br><span class="line">tar -zxvf filebeat-7.10.0-linux-x86_64.tar.gz</span><br><span class="line">mv filebeat-7.10.0-linux-x86_64 filebeat710</span><br></pre></td></tr></table></figure>
+
+<h5 id="filebeat-配置文件"><a href="#filebeat-配置文件" class="headerlink" title="filebeat 配置文件"></a>filebeat 配置文件</h5><p>修改 filebeat.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">filebeat.inputs:</span><br><span class="line">-type: log</span><br><span class="line"> enabled: true</span><br><span class="line"> paths:</span><br><span class="line"> - &#x2F;var&#x2F;log&#x2F;secure</span><br><span class="line"> fields:</span><br><span class="line">log_topic: osmessages</span><br><span class="line">filebeat.config.modules:</span><br><span class="line"> path: $&#123;path.config&#125;&#x2F;modules.d&#x2F;*.yml</span><br><span class="line"> reload.enabled: false</span><br><span class="line">setup.template.settings:</span><br><span class="line"> index.number_of_shards: 1</span><br><span class="line">name: &quot;192.168.21.101&quot;</span><br><span class="line">setup.kibana:</span><br><span class="line">output.kafka:</span><br><span class="line"> enabled: true</span><br><span class="line"> hosts: [&quot;192.168.21.101:9092&quot;]</span><br><span class="line"> version: &quot;0.10&quot;</span><br><span class="line"> topic: &#39;%&#123;[fields][log_topic]&#125;%&#39;</span><br><span class="line"> partition.round_robin:</span><br><span class="line">   reachable_only: true</span><br><span class="line"> worker: 2</span><br><span class="line"> required_acks: 1</span><br><span class="line"> compression: gzip</span><br><span class="line"> max_message_bytes: 10000000</span><br><span class="line">logging.level: debug</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="filebeat-启动"><a href="#filebeat-启动" class="headerlink" title="filebeat 启动"></a>filebeat 启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./filebeat -e -c filebeat.yml &amp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h4><h5 id="下载和安装"><a href="#下载和安装" class="headerlink" title="下载和安装"></a>下载和安装</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载和安装</span></span><br><span class="line">tar -zxvf elasticsearch-7.7.1.tar.gz</span><br><span class="line">mv elasticsearch-7.7.1 /data/software/elasticsearch</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加用户，安全考虑，es不能使用root用户</span></span><br><span class="line">useradd elasticsearch</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="操作系统调优"><a href="#操作系统调优" class="headerlink" title="操作系统调优"></a>操作系统调优</h5><p>调整内核参数，将内容添加到/etc/sysctl.conf文件中：</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最大打开文件描述符数</span></span><br><span class="line"><span class="meta">fs.file-max</span>=<span class="string">655360 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 影响java线程数量，用于限制一个进程可以拥有的VMA(虚拟内存区域)</span></span><br><span class="line"><span class="comment"># 不知道是不是得重启虚拟机才管用，如果不管用可以用下面的</span></span><br><span class="line"><span class="meta">vm.max_map_count</span> = <span class="string">262144</span></span><br><span class="line"><span class="attr">sysctl</span> <span class="string">-w vm.max_map_count=262144</span></span><br><span class="line"><span class="attr">sysctl</span> <span class="string">-a|grep vm.max_map_count</span></span><br></pre></td></tr></table></figure>
+
+<p>另外还需调整进程最大文件描述符（nofile）、最大用户进程数（nproc）和最大锁定内存空间（memlock）,添加如下内容到/etc/security/limits.conf文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* soft nproc 20480</span><br><span class="line">* hard nproc 20480</span><br><span class="line">* soft nofile 65536</span><br><span class="line">* hard nofile 65536</span><br><span class="line">* soft memlock unlimited</span><br><span class="line">* hard memlock unlimited</span><br></pre></td></tr></table></figure>
+
+<p>修改 /etc/security/limits.d/20-nproc.conf文件，将* soft nproc 4096，修改为* soft nproc 20480</p>
+<p>jvm调优：</p>
+<p>修改/data/software/elasticsearch/config/jvm.options，一般设置未服务器物理内存一半</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-Xms1g #由于本地虚拟机内存不够，修改为-Xms340m</span><br><span class="line">-Xmx1g #由于本地虚拟机内存不够，修改为-Xmx340m</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置elasticsearch"><a href="#配置elasticsearch" class="headerlink" title="配置elasticsearch"></a>配置elasticsearch</h5><p>配置elasticsearch.yml</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">cluster.name</span>: <span class="string">my-application # Elasticsearch 集群名称</span></span><br><span class="line"><span class="meta">node.name</span>: <span class="string">node01   </span></span><br><span class="line"><span class="meta">node.master</span>: <span class="string">true  # 指定该节点是否有资格被选举成为 master</span></span><br><span class="line"><span class="meta">node.data</span>: <span class="string">true    # 指定该节点是否存储索引数据</span></span><br><span class="line"><span class="meta">path.data</span>: <span class="string">/data/esdata  #设置索引数据的存储路径</span></span><br><span class="line"><span class="meta">path.logs</span>: <span class="string">/data/software/elasticsearch/logs # 设置日志文件的存储路径</span></span><br><span class="line"><span class="meta">bootstrap.memory_lock</span>: <span class="string">true  # 一般设置为 true 用来锁住物理内存</span></span><br><span class="line"><span class="meta">network.host</span>: <span class="string">0.0.0.0 # 配置为服务器的内网 IP 地址即可</span></span><br><span class="line"><span class="meta">http.port</span>: <span class="string">9200 # 对外提供服务的 http 端口</span></span><br><span class="line"><span class="meta">discovery.seed_hosts</span>: <span class="string">[&quot;node01&quot;] #配置集群的所有主机地址</span></span><br><span class="line"><span class="meta">cluster.initial_master_nodes</span>: <span class="string">[&quot;node01&quot;]  # 设置一系列符合 master 节点条件的主机名或 IP 地址来引导启动集群</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="启动-elasticsearch"><a href="#启动-elasticsearch" class="headerlink" title="启动 elasticsearch"></a>启动 elasticsearch</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 切换到es</span></span><br><span class="line">su - elasticsearch</span><br><span class="line">cd /data/software/elasticsearch</span><br><span class="line"><span class="meta">#</span><span class="bash"> -d 参数的意思是将es放到后台运行</span></span><br><span class="line">bin/elasticsearch -d</span><br></pre></td></tr></table></figure>
+
+<p>验证es正常运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http:&#x2F;&#x2F;192.168.21.101:9200</span><br></pre></td></tr></table></figure>
+
+<p><img src="/log-elk/index.assets/1606555108241.png" alt="1606555108241"></p>
+<p>安装Head插件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装nodejs</span></span><br><span class="line">curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -</span><br><span class="line">yum install -y nodejs</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装git</span></span><br><span class="line">yum install -y git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载插件代码</span></span><br><span class="line">git clone git://github.com/mobz/elasticsearch-head.git</span><br><span class="line">npm config set registry “http://registry.npm.taobao.org/”</span><br><span class="line">cd elasticsearch-head</span><br><span class="line">npm install</span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改配置文件</span></span><br><span class="line">elasticsearch-head/_site/app.js</span><br></pre></td></tr></table></figure>
+
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-12-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -11,7 +11,7 @@
 
     <title>
         
-          page - haozidada
+          haozidada
         
     </title>
 
@@ -150,23 +150,35 @@ function sidebar_toggle() {
 
         </div>
         <div class="book-content">
-          <div class="book-post">
+          
+<article id="page">
+  <h1></h1>
+  <h3 id="pycharm-配置远程python"><a href="#pycharm-配置远程python" class="headerlink" title="pycharm 配置远程python"></a>pycharm 配置远程python</h3><ol>
+<li><p>点击file-&gt;settings-&gt;Project-&gt;Intercepter</p>
+<p>在选择Project Interceptor中添加python Interceptor,选择SSH Interceptor，填写【Host】、【Port】、【Username】， 然后下一步</p>
+<p><img src="/python-pycharm/index.assets/1566817832662.png" alt="1566817832662"></p>
+</li>
+<li><p>填写【Password】，然后下一步</p>
+</li>
+<li><p>选择远程服务器【Interceptor】与Sync folders并且点击完成</p>
+<p><img src="/python-pycharm/index.assets/1566821100162.png" alt="1566821100162">    </p>
+</li>
+<li><p>pycharm 工具栏 选择Tools-&gt;Deployment-&gt;Configuration 配置Connection和Mappings</p>
+<p>【Root path】 为项目根目录</p>
+<p><img src="/python-pycharm/index.assets/1566818367402.png" alt="1566818367402"></p>
+<p>【Local path】为本地代码目录</p>
+<p>【Deployment Path】+【Root path】 为项目全路径 </p>
+<p>【Web path】感觉没什么用</p>
+</li>
+</ol>
+<p><img src="/python-pycharm/index.assets/1566818606916.png" alt="1566818606916"></p>
+
+</article>
+
+<div id="paginator">
   
   
 </div>
-
-
-  <div class="book-comments">
-    
-
-
-
-
-  </div>
-
-
-
-<script src="/js/book-post.js"></script>
 
         </div>
       </div>
@@ -191,7 +203,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div>2020-11-05</div>
+      <div>2020-12-10</div>
     </div>
   </div>
 

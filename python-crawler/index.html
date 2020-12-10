@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          haozidada
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+	
+<!-- 填写你的友盟代码 -->
+<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279410031'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279410031%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+<!-- 你的友盟代码 end -->
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HAOZIDADA</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
+<li><a href="/">首页</a></li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><a href="/python-install">python安装</a></li>
+<li><a href="/python-pycharm">pycharm 配置远程python</a></li>
+<li><a href="/celery-learn">celery使用笔记</a></li>
+<li><a href="/celery-clawer">python网络爬虫</a></li>
+<li><a href="/java">java源码阅读</a></li>
+</ul>
+<h2 id="数据仓库-amp-ETL"><a href="#数据仓库-amp-ETL" class="headerlink" title="数据仓库&amp;ETL"></a>数据仓库&amp;ETL</h2><ul>
+<li><a href="/kettle-csv">kettle 定时同步csv到数据库表</a></li>
+<li><a href="/kettle-conn-hive">kettle 连接hive</a></li>
+<li><a href="/kettle-mysql">kettle 将mysql导入hive</a></li>
+</ul>
+<h2 id="大数据集群相关"><a href="#大数据集群相关" class="headerlink" title="大数据集群相关"></a>大数据集群相关</h2><ul>
+<li><a href="/log-elk">elk日志采集</a></li>
+<li><a href="/cluster-learn">hadoop集群运维</a></li>
+<li><a href="/kafka-learn">kafka安装和使用</a></li>
+</ul>
+<h2 id="服务器-amp-数据库"><a href="#服务器-amp-数据库" class="headerlink" title="服务器&amp;数据库"></a>服务器&amp;数据库</h2><ul>
+<li><a href="/pgsql-learn">pgsql安装以及使用</a></li>
+<li><a href="/mysql-learn">mysql安装以及使用</a></li>
+<li><a href="/oracle-learn">oracle使用笔记</a></li>
+<li><a href="/docker-learn">docker安装以及使用</a></li>
+<li><a href="/redis-learn">redis安装以及使用</a></li>
+</ul>
+<ul>
+<li><a href="/github-pages">Github Pages教程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <h4 id="python-网络爬虫"><a href="#python-网络爬虫" class="headerlink" title="python 网络爬虫"></a>python 网络爬虫</h4><hr>
+<h4 id="爬虫基本库使用"><a href="#爬虫基本库使用" class="headerlink" title="爬虫基本库使用"></a>爬虫基本库使用</h4><ol>
+<li><p>requests</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. get请求</span></span><br><span class="line"><span class="keyword">import</span> requests  </span><br><span class="line">r = requests.get(<span class="string">&#x27;https://static1.scrape.cuiqingcai.com/&#x27;</span>)  </span><br><span class="line"><span class="comment"># 2.post请求</span></span><br><span class="line">data = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;germey&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="string">&#x27;25&#x27;</span>&#125;</span><br><span class="line">r = requests.post(<span class="string">&quot;http://httpbin.org/post&quot;</span>, data=data)</span><br><span class="line">print(r.text)</span><br><span class="line"><span class="comment"># 2.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pyquery html解析库</p>
+</li>
+</ol>
+<h4 id="Scrapy-框架使用"><a href="#Scrapy-框架使用" class="headerlink" title="Scrapy 框架使用"></a>Scrapy 框架使用</h4><ol>
+<li><p>scrapy的组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Engine(引擎): 用来处理整个系统的数据流处理、触发事务，是整个框架的核心</span><br><span class="line">Item(项目)：定义了爬取结果数据结构，爬取的数据会被赋值为该对象</span><br><span class="line">Scheduler(调度器)：用来接受引擎发过来的请求并加入队列中，并在引擎再次请求的时候提供给引擎</span><br><span class="line">Downloader(下载器): 用于下载网页内容，并讲网页内容返回给蜘蛛</span><br><span class="line">Spider(蜘蛛)：其内定义了爬虫的逻辑和网页的解析规则，主要负责解析响应并生成提取结果和新的请求</span><br><span class="line">Item Pipeline(项目管道)：负责处理蜘蛛从网页中抽取的项目，主要任务是清洗、验证、和存储数据</span><br><span class="line">Downloader Middlewares(下载器中间件)：位于引擎和下载器的钩子框架，主要是处理引擎与下载器之间的请求以及响应</span><br><span class="line">Spider Middlewares(蜘蛛中间件)：位于引擎和蜘蛛之间的钩子框架，主要工作是处理蜘蛛输入响应和输出的结果以及新的请求</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scrapy 项目初始化</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建项目</span></span><br><span class="line">scrapy startproject tutorial</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建spider</span></span><br><span class="line">cd tutorial</span><br><span class="line">scrapy genspider quotes  quotes.com</span><br><span class="line"><span class="meta">#</span><span class="bash"> 运行爬虫</span></span><br><span class="line">scrapy crawl quotes -o quotes.json</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 爬取队列保存到本地，防止中断，</span></span><br><span class="line">scrapy crawl quotes -s JOBDIR=crawls/spider</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spider 运行流程</p>
+</li>
+<li><p>分布式爬虫</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单机：有一个本地的Queue,这个队列利用deque模块实现的</span><br><span class="line">分布式：拓展多个Scheduler、Downloader,爬取队列Queue始终一个（共享爬取队列），这样能保证Scheduler从队列里调度某个Request之后，其他Scheduler不会重复调度此Request</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分布式利器 Scrapy-Redis</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/rmax/scrapy-redis.git </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scrapyd </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> scrapy 的服务程序，提供一系列http接口帮我们部署、启动、停止、删除爬虫程序</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装（另外需要安装项目本身依赖scrapy、scrapy-redis、gerapy-pyppeteer）</span></span><br><span class="line">pip install scrapyd</span><br><span class="line">sudo mkdir /etc/scrapyd</span><br><span class="line">sudo vi /etc/scrapyd/scrapyd.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动scrapyd http://xxx.xx.xxx.xx:6800</span></span><br><span class="line"><span class="meta">(scrapyd&gt;</span><span class="bash"> ~/scrapyd.log &amp;) </span></span><br><span class="line"><span class="meta"> #</span><span class="bash"> 接口负责查看 Scrapyd 当前服务和任务的状态</span></span><br><span class="line">curl http://xxx.xx.xxx.xx:6800/daemonstatus.json </span><br><span class="line"><span class="meta">#</span><span class="bash"> 主要是用来部署 Scrapy 项目，在部署的时候我们需要首先将项目打包成 Egg 文件，然后传入项目名称和部署版本</span></span><br><span class="line">curl http://xxx.xx.xxx.xx:6800/addversion.json -F project=weibo -F version=first -F egg=@weibo.egg </span><br><span class="line"><span class="meta">#</span><span class="bash"> 调度已部署好的 Scrapy 项目运行</span></span><br><span class="line">curl http://xxx.xx.xxx.xx:6800/schedule.json -d project=weibo -d spider=weibocn </span><br><span class="line"><span class="meta">#</span><span class="bash"> 取消某个爬取任务，如果这个任务是 pending 状态，那么它将会被移除，如果这个任务是 running 状态，那么它将会被终止</span></span><br><span class="line">curl http://xxx.xx.xxx.xx:6800/cancel.json -d project=weibo -d job=6487ec79947edab326d6db28a2d86511e8247444 </span><br><span class="line"><span class="meta">#</span><span class="bash"> 列出部署到 Scrapyd 服务上的所有项目描述</span></span><br><span class="line">curl http://120.27.34.25:6800/listprojects.json </span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取某个项目的所有版本号</span></span><br><span class="line">curl http://120.27.34.25:6800/listversions.json?project=weibo </span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取某个项目当前运行的所有任务详情</span></span><br><span class="line">curl http://120.27.34.25:6800/listjobs.json?project=weibo</span><br><span class="line"><span class="meta">#</span><span class="bash"> 来删除项目的某个版本</span></span><br><span class="line">curl http://120.27.34.25:6800/delversion.json -d project=weibo -d version=v1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#scrapyd.conf 的配置文件</span></span><br><span class="line"><span class="meta">[scrapyd]</span> <span class="string">  </span></span><br><span class="line"><span class="attr">eggs_dir</span> <span class="string">   = eggs   </span></span><br><span class="line"><span class="attr">logs_dir</span> <span class="string">   = logs   </span></span><br><span class="line"><span class="attr">items_dir</span> <span class="string">  =   </span></span><br><span class="line"><span class="attr">jobs_to_keep</span> = <span class="string">5   </span></span><br><span class="line"><span class="attr">dbs_dir</span> <span class="string">    = dbs   </span></span><br><span class="line"><span class="attr">max_proc</span> <span class="string">   = 0   </span></span><br><span class="line"><span class="attr">max_proc_per_cpu</span> = <span class="string">10   </span></span><br><span class="line"><span class="attr">finished_to_keep</span> = <span class="string">100   </span></span><br><span class="line"><span class="attr">poll_interval</span> = <span class="string">5.0   </span></span><br><span class="line"><span class="attr">bind_address</span> = <span class="string">0.0.0.0   </span></span><br><span class="line"><span class="attr">http_port</span> <span class="string">  = 6800   </span></span><br><span class="line"><span class="attr">debug</span> <span class="string">      = off   </span></span><br><span class="line"><span class="attr">runner</span> <span class="string">     = scrapyd.runner   </span></span><br><span class="line"><span class="attr">application</span> = <span class="string">scrapyd.app.application   </span></span><br><span class="line"><span class="attr">launcher</span> <span class="string">   = scrapyd.launcher.Launcher   </span></span><br><span class="line"><span class="attr">webroot</span> <span class="string">    = scrapyd.website.Root   </span></span><br><span class="line"><span class="meta">​</span> <span class="string"></span></span><br><span class="line"><span class="meta">[services]</span> <span class="string">  </span></span><br><span class="line"><span class="meta">schedule.json</span> <span class="string">    = scrapyd.webservice.Schedule   </span></span><br><span class="line"><span class="meta">cancel.json</span> <span class="string">      = scrapyd.webservice.Cancel   </span></span><br><span class="line"><span class="meta">addversion.json</span> <span class="string">  = scrapyd.webservice.AddVersion   </span></span><br><span class="line"><span class="meta">listprojects.json</span> = <span class="string">scrapyd.webservice.ListProjects   </span></span><br><span class="line"><span class="meta">listversions.json</span> = <span class="string">scrapyd.webservice.ListVersions   </span></span><br><span class="line"><span class="meta">listspiders.json</span>  = <span class="string">scrapyd.webservice.ListSpiders   </span></span><br><span class="line"><span class="meta">delproject.json</span> <span class="string">  = scrapyd.webservice.DeleteProject   </span></span><br><span class="line"><span class="meta">delversion.json</span> <span class="string">  = scrapyd.webservice.DeleteVersion   </span></span><br><span class="line"><span class="meta">listjobs.json</span> <span class="string">    = scrapyd.webservice.ListJobs   </span></span><br><span class="line"><span class="meta">daemonstatus.json</span> = <span class="string">scrapyd.webservice.DaemonStatus </span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="爬虫问题"><a href="#爬虫问题" class="headerlink" title="爬虫问题"></a>爬虫问题</h4><ol>
+<li><p>动态网页加载如何处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">现在网页大多已编程SPA页面，页面浏览器中呈现结果经过JS渲染得到</span><br><span class="line">Selenium和Pyppeteer 可以实现jS渲染页面的抓取</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+</article>
+
+<div id="paginator">
+  
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="h"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>haozidada</div>
+      <div>2020-12-10</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+ 
+</div>
+
+</body>
+
+</html>
+
+
+<script src="/js/book.js"></script>
