@@ -144,37 +144,17 @@ function sidebar_toggle() {
           
 <article id="page">
   <h1></h1>
-  <h3 id="jdk-源码阅读"><a href="#jdk-源码阅读" class="headerlink" title="jdk 源码阅读"></a>jdk 源码阅读</h3><hr>
-<h4 id="1-java源码阅读环境搭建"><a href="#1-java源码阅读环境搭建" class="headerlink" title="1. java源码阅读环境搭建"></a>1. java源码阅读环境搭建</h4><ol>
-<li><p>解压 C:\Program Files\Java\jdk1.8.0_131\src.zip , 重命名jdk_source</p>
-</li>
-<li><p>打开idea，选择Project -&gt; File -&gt; Project Structure -&gt; SDKs -&gt; Sourcepath,添加并选择刚才解压的目录 </p>
-</li>
-</ol>
-<p><img src="/java/media.assets/1600828735623.png" alt="1600828735623"></p>
-<p>3）编辑器左侧会出现java的源码包，选择要看的类的源码就能进去</p>
-<p><img src="/java/media.assets/1600829055222.png" alt="1600829055222"></p>
-<h4 id="1-2-IDEA-调试java-源码技巧"><a href="#1-2-IDEA-调试java-源码技巧" class="headerlink" title="1.2 IDEA 调试java 源码技巧"></a>1.2 IDEA 调试java 源码技巧</h4><ol>
-<li>查看接口实现类：Ctrl + Alt +B 选中按快捷键，然后跳到实现类地方去</li>
-<li>查看当前类继承树：Ctrl + H </li>
-</ol>
-<h4 id="2-源码部分"><a href="#2-源码部分" class="headerlink" title="2. 源码部分"></a>2. 源码部分</h4><h5 id="2-1-Object-类"><a href="#2-1-Object-类" class="headerlink" title="2.1 Object 类"></a>2.1 Object 类</h5><ol>
-<li>hashCode<ul>
-<li>public native int hashCode() Object 类下的native 方法，返回对象哈希值</li>
-<li>equals 比较两个对象相等，则一定有相同哈希值，equals比较二者不相等，则哈希码也可能相等，但是不等对象产生不同整型结果有助于提高哈希表性能</li>
+  <h2 id="kettle-将mysql-导入到hive（借助Hadoop-File-Output组件）"><a href="#kettle-将mysql-导入到hive（借助Hadoop-File-Output组件）" class="headerlink" title="kettle 将mysql 导入到hive（借助Hadoop File Output组件）"></a>kettle 将mysql 导入到hive（借助Hadoop File Output组件）</h2><p>在使用kettle 的表输出组件的时候，因为服务器hive版本为0.13,不支持insert into values的语法（hive 的0.14版本才支持），所以通过表输出的方式，插入到hive会报错。<br>所以想了一个其他的办法，通过kettle提供的Hadoop File Output 组件将数据以数据文件的方式导入到hadoop的hdfs。然后通后通过执行sql脚本，使用hive 支持的 load data inpath  into table 的方式，将hdfs的数据文件，加载到hive表中。<br>##步骤</p>
+<h4 id="1-创建hive-的数据库连接"><a href="#1-创建hive-的数据库连接" class="headerlink" title="1.创建hive 的数据库连接"></a>1.创建hive 的数据库连接</h4><p> 在kettle的DB连接里面新建数据库连接，连接hive。在我的上篇文章里面有关于kettle里面创建hive连接的步骤，详情请参照我的另一篇文章<a target="_blank" rel="noopener" href="http://www.jianshu.com/p/ec45c21a977f">Data Integration (kettle) 7.0 连接Hive</a></p>
+<h4 id="2-新建hadoop-cluster连接"><a href="#2-新建hadoop-cluster连接" class="headerlink" title="2.新建hadoop cluster连接"></a>2.新建hadoop cluster连接</h4><ul>
+<li>配置kettle hadoop cluster的配置文件<br>从服务器hadoop etc的配置文件中下载如下4个配置文件，覆盖kettle的plugins\pentaho-big-data-plugin\hadoop-configurations\hdp25中的4个同名文件。<br><img src="/kettle-mysql/index.assets/6285492-18f9c550b2c66ee0.png" alt="image.png"></li>
+<li>新建hadoop cluster 连接<br>填写相应的配置，配置的hostname 和端口号根据上面4个配置文件填写，如下图：<br><img src="/kettle-mysql/index.assets/6285492-4fdedd02c218f8c5.png" alt="image.png"><br>点击测试连接，如下图：</li>
 </ul>
-</li>
-<li>clone <ul>
-<li>protected native Object clone() throws CloneNotSupportedException 创建并返回对象的副本</li>
-<li>该方法是“浅拷贝”，该方法将创建该对象类的一个新实例，并使用该对象相应字段的内容初始化所有字段，就像赋值一样，这些字段的内容本身不是克隆的</li>
-<li>Object类本身没实现Cloneable 接口，如果一个类没有实现Cloneable接口，就会抛出CloneNotSupportedException异常，</li>
-</ul>
-</li>
-</ol>
-<h5 id="2-2-Serializable-接口"><a href="#2-2-Serializable-接口" class="headerlink" title="2.2 Serializable 接口"></a>2.2 Serializable 接口</h5><ul>
-<li>是一个接口，仅标识可序列化的语义</li>
-<li></li>
-</ul>
+<p><img src="/kettle-mysql/index.assets/6285492-27d1444a3e8da6b2.png" alt="image.png"><br>有一部分是报些错误，不过不影响，只要Hadoop File System Connection 没报错就行。</p>
+<h4 id="3-转换整体流程"><a href="#3-转换整体流程" class="headerlink" title="3.转换整体流程"></a>3.转换整体流程</h4><p>整个转换的流程如下：<br><img src="/kettle-mysql/index.assets/6285492-fbc08b31ef6ba475.png" alt="image.png"><br>通过表输入的方式，从mysql数据库读取表数据，然后通过Hadoop File Output将mysql数据库的数据以数据文件的方式，输出到hadoop的hdfs，然后执行SQL脚本，将数据文件加载到hive的表中。</p>
+<h4 id="4-Hadoop-File-Output组件"><a href="#4-Hadoop-File-Output组件" class="headerlink" title="4.Hadoop File Output组件"></a>4.Hadoop File Output组件</h4><p>hadoop file output 组件配置如下：</p>
+<p><img src="/kettle-mysql/index.assets/6285492-1d0dcee1c0b4a276.png" alt="image.png"><br>在内容里面注意标红的几个配置，头部是否显示列名，勾选完后表示不显示列名。<br><img src="/kettle-mysql/index.assets/6285492-47d58ab48e52e754.png" alt="image.png"></p>
+<h4 id="5-执行sql-脚本组件"><a href="#5-执行sql-脚本组件" class="headerlink" title="5.执行sql 脚本组件"></a>5.执行sql 脚本组件</h4><p>使用步骤1创建的hive连接，连接hive，然后通过如下脚本，将数据从hdfs里面导入到hive。<br><img src="/kettle-mysql/index.assets/6285492-a5dca742c8bd9ebf.png" alt="image.png"></p>
 
 </article>
 
@@ -206,7 +186,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div>2020-11-06</div>
+      <div>2020-12-09</div>
     </div>
   </div>
 

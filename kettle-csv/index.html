@@ -144,37 +144,22 @@ function sidebar_toggle() {
           
 <article id="page">
   <h1></h1>
-  <h3 id="jdk-源码阅读"><a href="#jdk-源码阅读" class="headerlink" title="jdk 源码阅读"></a>jdk 源码阅读</h3><hr>
-<h4 id="1-java源码阅读环境搭建"><a href="#1-java源码阅读环境搭建" class="headerlink" title="1. java源码阅读环境搭建"></a>1. java源码阅读环境搭建</h4><ol>
-<li><p>解压 C:\Program Files\Java\jdk1.8.0_131\src.zip , 重命名jdk_source</p>
-</li>
-<li><p>打开idea，选择Project -&gt; File -&gt; Project Structure -&gt; SDKs -&gt; Sourcepath,添加并选择刚才解压的目录 </p>
-</li>
+  <h1 id="使用kettle-定时同步csv文件数据到数据库表"><a href="#使用kettle-定时同步csv文件数据到数据库表" class="headerlink" title="使用kettle 定时同步csv文件数据到数据库表"></a>使用kettle 定时同步csv文件数据到数据库表</h1><p>最近由Java工程师转岗为ETL数据工程师，虽然以前也有为数据集成的项目储备过kettle相关的知识，但是一直没有在生产环境中实际使用过kettle。然后最近刚好有一个比较小的活，需要每天定时同步几个csv文件到数据库表，然后用kettle大概花了一天时间做完了这个任务。</p>
+<blockquote>
+<p>需求：将每天上传到指定目录下.tar.gz压缩包下的4个csv文件，每天定时同步到数据库表中。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li> 首先对压缩文件解压，解压.tar.gz文件，得到4个csv文件。</li>
+<li>然后对4个csv文件使用kettle，输出到数据库表。</li>
+<li>使用linux crontab 定时调用脚本完成每天的同步任务。</li>
 </ol>
-<p><img src="/java/media.assets/1600828735623.png" alt="1600828735623"></p>
-<p>3）编辑器左侧会出现java的源码包，选择要看的类的源码就能进去</p>
-<p><img src="/java/media.assets/1600829055222.png" alt="1600829055222"></p>
-<h4 id="1-2-IDEA-调试java-源码技巧"><a href="#1-2-IDEA-调试java-源码技巧" class="headerlink" title="1.2 IDEA 调试java 源码技巧"></a>1.2 IDEA 调试java 源码技巧</h4><ol>
-<li>查看接口实现类：Ctrl + Alt +B 选中按快捷键，然后跳到实现类地方去</li>
-<li>查看当前类继承树：Ctrl + H </li>
-</ol>
-<h4 id="2-源码部分"><a href="#2-源码部分" class="headerlink" title="2. 源码部分"></a>2. 源码部分</h4><h5 id="2-1-Object-类"><a href="#2-1-Object-类" class="headerlink" title="2.1 Object 类"></a>2.1 Object 类</h5><ol>
-<li>hashCode<ul>
-<li>public native int hashCode() Object 类下的native 方法，返回对象哈希值</li>
-<li>equals 比较两个对象相等，则一定有相同哈希值，equals比较二者不相等，则哈希码也可能相等，但是不等对象产生不同整型结果有助于提高哈希表性能</li>
-</ul>
-</li>
-<li>clone <ul>
-<li>protected native Object clone() throws CloneNotSupportedException 创建并返回对象的副本</li>
-<li>该方法是“浅拷贝”，该方法将创建该对象类的一个新实例，并使用该对象相应字段的内容初始化所有字段，就像赋值一样，这些字段的内容本身不是克隆的</li>
-<li>Object类本身没实现Cloneable 接口，如果一个类没有实现Cloneable接口，就会抛出CloneNotSupportedException异常，</li>
-</ul>
-</li>
-</ol>
-<h5 id="2-2-Serializable-接口"><a href="#2-2-Serializable-接口" class="headerlink" title="2.2 Serializable 接口"></a>2.2 Serializable 接口</h5><ul>
-<li>是一个接口，仅标识可序列化的语义</li>
-<li></li>
-</ul>
+<h2 id="kettle-Job流程"><a href="#kettle-Job流程" class="headerlink" title="kettle Job流程"></a>kettle Job流程</h2><p>下面是同步csv文件Job的整体流程，整体流程是如下：<br>设置当前日期变量-&gt;清除表数据-&gt;同步csv到数据库*4-&gt;成功/失败邮件<br><img src="/kettle-csv/index.assets/6285492-bef2f1938e51712f.png" alt="整体流程"></p>
+<h5 id="1-设置当前日期变量"><a href="#1-设置当前日期变量" class="headerlink" title="1. 设置当前日期变量"></a>1. 设置当前日期变量</h5><p>因为csv文件都是有日期后缀的，每天一个，所以获取csv文件名的时候需要拼一个当前日期字符串。因为后面4个同步csv的转换都需要这个日期字符串，所以单独用一个转换来处理这个日期字符串，然后设置到环境变量，后面的几个转换，再获取这个日期字符串，这个转换主要有3步：<br>获取系统时间-&gt;时间格式化-&gt;设置时间变量到环境变量，其中时间格式化是采用JavaScript插件来处理：<br><img src="/kettle-csv/index.assets/6285492-bb81f763f253d375.png" alt="日期格式化"><br>在设置时间变量步骤中，需要注意，设置的环境变量是通过第二列的${FILEDATE}来获取，而不是第一列的字段名<br><img src="/kettle-csv/index.assets/6285492-554aac15138b11ae.png" alt="设置环境变量"></p>
+<h5 id="2-清除表数据"><a href="#2-清除表数据" class="headerlink" title="2. 清除表数据"></a>2. 清除表数据</h5><p>通过sql插件来清除4张表数据。</p>
+<h5 id="3-同步CSV文件到数据库表"><a href="#3-同步CSV文件到数据库表" class="headerlink" title="3. 同步CSV文件到数据库表"></a>3. 同步CSV文件到数据库表</h5><p>这部分是主要的流程，CSV文件是以当前日期结尾的，不是固定的，所以一开始需要处理csv文件名，动态拼接日期字符串。流程如下：<br>获取当前日期变量-&gt;处理文件名字符串-&gt;CSV文件输入-&gt;表输出<br><img src="/kettle-csv/index.assets/6285492-6923ffb01f6d6ae9.png" alt="同步数据文件主要流程"><br>处理文件名字符串字符串使用的是公式插件，然后拼接日期参数：<br><img src="/kettle-csv/index.assets/6285492-058b110a82e2ed06.png" alt="处理文件名"><br>csv文件输入的时候，需要选择从上一步骤获取文件名，然后因为没有从本地选择本地文件，所以无法获取字段，可以创建一个从本地文件读取的csv输入，获取字段Copy下来，然后黏贴到下面字段列表里。<br><img src="/kettle-csv/index.assets/6285492-3add3cdbffcbbe18.png" alt="csv文件输入"></p>
+<h2 id="shell脚本来处理压缩文件和执行Job任务"><a href="#shell脚本来处理压缩文件和执行Job任务" class="headerlink" title="shell脚本来处理压缩文件和执行Job任务"></a>shell脚本来处理压缩文件和执行Job任务</h2><p>通过linux crontab 定时执行shell脚本来解压文件，以及执行kettle的Job任务。解压tar.gz文件到指定目录，然后再调用kettle kitchen命令来执行Job。</p>
+<h5 id="1-处理压缩文件脚本如下："><a href="#1-处理压缩文件脚本如下：" class="headerlink" title="1. 处理压缩文件脚本如下："></a>1. 处理压缩文件脚本如下：</h5><p><img src="/kettle-csv/index.assets/6285492-b7b08073b7670983.png" alt="处理压缩文件脚本"></p>
+<h5 id="2-执行ETL-Job任务脚本如下"><a href="#2-执行ETL-Job任务脚本如下" class="headerlink" title="2. 执行ETL Job任务脚本如下:"></a>2. 执行ETL Job任务脚本如下:</h5><p><img src="/kettle-csv/index.assets/6285492-98aab60de2bae16c.png" alt="执行kettle job脚本"></p>
 
 </article>
 
@@ -206,7 +191,7 @@ function sidebar_toggle() {
     <!-- Author title -->
     <div class="author-title">
       <div>haozidada</div>
-      <div>2020-11-06</div>
+      <div>2020-12-09</div>
     </div>
   </div>
 
